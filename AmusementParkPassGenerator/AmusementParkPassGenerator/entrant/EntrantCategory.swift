@@ -2,14 +2,18 @@
 //  EntrantCategory.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 09.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 09.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
-enum EntrantCategory: String {
-    case guest = "Guest"
-    case employee = "Employee"
-    case manager = "Manager"
+enum EntrantCategory: String, Descriptable {
+    case guest
+    case employee
+    case manager
+    
+    func description() -> String {
+        return "\(self)".capitalizingFirstLetter()
+    }
     
     func subCategories() -> [EntrantSubCategory] {
         switch self {

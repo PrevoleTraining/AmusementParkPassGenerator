@@ -21,6 +21,15 @@
 		FDEDFCC9200555CB00AD2B71 /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC8200555CB00AD2B71 /* Entrant.swift */; };
 		FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCCA200556B600AD2B71 /* RideAccess.swift */; };
 		FDEDFCCD2005572500AD2B71 /* DiscountAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCCC2005572500AD2B71 /* DiscountAccess.swift */; };
+		FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCCF200577BF00AD2B71 /* PListConverter.swift */; };
+		FDEDFCD22005780A00AD2B71 /* PListConverterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */; };
+		FDEDFCD42005784600AD2B71 /* EntrantableUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */; };
+		FDEDFCDA20057D5400AD2B71 /* entrants.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDEDFCD920057D5400AD2B71 /* entrants.plist */; };
+		FDEDFCDD2006AB5A00AD2B71 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCDC2006AB5A00AD2B71 /* Person.swift */; };
+		FDEDFCDF2006ADB400AD2B71 /* Personable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCDE2006ADB400AD2B71 /* Personable.swift */; };
+		FDEDFCE12006ADE100AD2B71 /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCE02006ADE100AD2B71 /* PersonalInfo.swift */; };
+		FDEDFCE32006AE7200AD2B71 /* Descriptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCE22006AE7200AD2B71 /* Descriptable.swift */; };
+		FDEDFCE62006AF2900AD2B71 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCE52006AF2900AD2B71 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,15 @@
 		FDEDFCC8200555CB00AD2B71 /* Entrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
 		FDEDFCCA200556B600AD2B71 /* RideAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccess.swift; sourceTree = "<group>"; };
 		FDEDFCCC2005572500AD2B71 /* DiscountAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountAccess.swift; sourceTree = "<group>"; };
+		FDEDFCCF200577BF00AD2B71 /* PListConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListConverter.swift; sourceTree = "<group>"; };
+		FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListConverterError.swift; sourceTree = "<group>"; };
+		FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantableUnarchiver.swift; sourceTree = "<group>"; };
+		FDEDFCD920057D5400AD2B71 /* entrants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entrants.plist; sourceTree = "<group>"; };
+		FDEDFCDC2006AB5A00AD2B71 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		FDEDFCDE2006ADB400AD2B71 /* Personable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personable.swift; sourceTree = "<group>"; };
+		FDEDFCE02006ADE100AD2B71 /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
+		FDEDFCE22006AE7200AD2B71 /* Descriptable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptable.swift; sourceTree = "<group>"; };
+		FDEDFCE52006AF2900AD2B71 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +111,12 @@
 		FD4E2527200408C9009F5779 /* AmusementParkPassGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				FDEDFCE42006AF1D00AD2B71 /* extensions */,
+				FDEDFCDB2006AB4900AD2B71 /* person */,
+				FDEDFCCE2005778100AD2B71 /* data */,
 				FDEDFCC52005538700AD2B71 /* entrant */,
 				FDEDFCBA20054E3D00AD2B71 /* access */,
+				FDEDFCE22006AE7200AD2B71 /* Descriptable.swift */,
 				FD4E2528200408C9009F5779 /* AppDelegate.swift */,
 				FD4E252A200408C9009F5779 /* ViewController.swift */,
 				FD4E252C200408C9009F5779 /* Main.storyboard */,
@@ -134,6 +156,35 @@
 				FDEDFCC8200555CB00AD2B71 /* Entrant.swift */,
 			);
 			path = entrant;
+			sourceTree = "<group>";
+		};
+		FDEDFCCE2005778100AD2B71 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDFCD920057D5400AD2B71 /* entrants.plist */,
+				FDEDFCCF200577BF00AD2B71 /* PListConverter.swift */,
+				FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */,
+				FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		FDEDFCDB2006AB4900AD2B71 /* person */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDFCDC2006AB5A00AD2B71 /* Person.swift */,
+				FDEDFCDE2006ADB400AD2B71 /* Personable.swift */,
+				FDEDFCE02006ADE100AD2B71 /* PersonalInfo.swift */,
+			);
+			path = person;
+			sourceTree = "<group>";
+		};
+		FDEDFCE42006AF1D00AD2B71 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDFCE52006AF2900AD2B71 /* String.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +273,7 @@
 				FD4E2533200408C9009F5779 /* LaunchScreen.storyboard in Resources */,
 				FD4E2530200408C9009F5779 /* Assets.xcassets in Resources */,
 				FD4E252E200408C9009F5779 /* Main.storyboard in Resources */,
+				FDEDFCDA20057D5400AD2B71 /* entrants.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,11 +295,19 @@
 				FD4E252B200408C9009F5779 /* ViewController.swift in Sources */,
 				FD4E2529200408C9009F5779 /* AppDelegate.swift in Sources */,
 				FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */,
+				FDEDFCDD2006AB5A00AD2B71 /* Person.swift in Sources */,
 				FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */,
+				FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */,
 				FDEDFCC9200555CB00AD2B71 /* Entrant.swift in Sources */,
 				FDEDFCCD2005572500AD2B71 /* DiscountAccess.swift in Sources */,
+				FDEDFCDF2006ADB400AD2B71 /* Personable.swift in Sources */,
 				FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */,
+				FDEDFCD42005784600AD2B71 /* EntrantableUnarchiver.swift in Sources */,
+				FDEDFCE62006AF2900AD2B71 /* String.swift in Sources */,
 				FDEDFCC42005513700AD2B71 /* EntrantCategory.swift in Sources */,
+				FDEDFCE12006ADE100AD2B71 /* PersonalInfo.swift in Sources */,
+				FDEDFCD22005780A00AD2B71 /* PListConverterError.swift in Sources */,
+				FDEDFCE32006AE7200AD2B71 /* Descriptable.swift in Sources */,
 				FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

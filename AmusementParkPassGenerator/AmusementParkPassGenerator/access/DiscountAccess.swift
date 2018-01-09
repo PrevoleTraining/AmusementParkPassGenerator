@@ -2,8 +2,8 @@
 //  DiscountAccess.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 09.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 09.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 enum DiscountAccess: Accessable {
@@ -13,7 +13,7 @@ enum DiscountAccess: Accessable {
     static func discount(name: String, discount: Int) -> DiscountAccess? {
         switch name {
         case "food": return DiscountAccess.food(discount: discount)
-        case "mechandise": return DiscountAccess.merchandise(discount: discount)
+        case "merchandise": return DiscountAccess.merchandise(discount: discount)
         default: return nil
         }
     }
