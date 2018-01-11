@@ -6,8 +6,12 @@
 //  Copyright © 2018 prevole.ch. All rights reserved.
 //
 
+import Foundation
+
 protocol Passable {
+    var uuid: UUID { get }
     var accesses: [Accessable] { get }
     
     func hasAccess(access: Accessable) -> Bool
 }
+

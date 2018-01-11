@@ -37,6 +37,7 @@
 		FDEDFCF22006E5DC00AD2B71 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF12006E5DC00AD2B71 /* Checkpoint.swift */; };
 		FDEDFCF42006E67400AD2B71 /* RideCheckpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF32006E67400AD2B71 /* RideCheckpoint.swift */; };
 		FDEDFCF62006E69700AD2B71 /* DiscountCheckpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF52006E69700AD2B71 /* DiscountCheckpoint.swift */; };
+		FDEDFCF82007F32200AD2B71 /* SwipeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF72007F32200AD2B71 /* SwipeResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FDEDFCF12006E5DC00AD2B71 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 		FDEDFCF32006E67400AD2B71 /* RideCheckpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCheckpoint.swift; sourceTree = "<group>"; };
 		FDEDFCF52006E69700AD2B71 /* DiscountCheckpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCheckpoint.swift; sourceTree = "<group>"; };
+		FDEDFCF72007F32200AD2B71 /* SwipeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				FDEDFCF12006E5DC00AD2B71 /* Checkpoint.swift */,
 				FDEDFCF32006E67400AD2B71 /* RideCheckpoint.swift */,
 				FDEDFCF52006E69700AD2B71 /* DiscountCheckpoint.swift */,
+				FDEDFCF72007F32200AD2B71 /* SwipeResult.swift */,
 			);
 			path = check;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				FDEDFCC42005513700AD2B71 /* EntrantCategory.swift in Sources */,
 				FDEDFCE92006DE1F00AD2B71 /* Pass.swift in Sources */,
 				FDEDFCE12006ADE100AD2B71 /* PersonalInfo.swift in Sources */,
+				FDEDFCF82007F32200AD2B71 /* SwipeResult.swift in Sources */,
 				FDEDFCF02006E3DE00AD2B71 /* AreaCheckpoint.swift in Sources */,
 				FDEDFCD22005780A00AD2B71 /* PListConverterError.swift in Sources */,
 				FDEDFCE32006AE7200AD2B71 /* Descriptable.swift in Sources */,

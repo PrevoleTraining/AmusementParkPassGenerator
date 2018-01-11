@@ -7,9 +7,11 @@
 //
 
 class DiscountCheckpoint: Checkpoint<DiscountAccess> {
-    func applyDiscount() {
-        let discount = access.discount()
-        print("\(discount)% on \(access) has been applied")
+    override func swipe(pass: Passable) -> SwipeResult {
+        if pass.hasAccess(access: access) {
+            return .grantedForDiscount(discount: access.discount())
+        } else {
+            return .denied(reason: "No discount granted for \(access.description())")
+        }
     }
 }
-

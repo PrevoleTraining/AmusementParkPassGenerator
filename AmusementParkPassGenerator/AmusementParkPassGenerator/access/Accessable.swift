@@ -7,4 +7,6 @@
 //
 
 protocol Accessable: Descriptable {
+    func isEqualTo(_ rhs: Accessable) -> Bool
 }
+

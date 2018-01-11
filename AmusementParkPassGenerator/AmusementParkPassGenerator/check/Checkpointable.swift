@@ -7,5 +7,5 @@
 //
 
 protocol Checkpointable {
-    func check(pass: Passable) -> Bool
+    func swipe(pass: Passable) -> SwipeResult
 }

@@ -29,4 +29,19 @@ enum DiscountAccess: Accessable {
         case .food(let discount), .merchandise(let discount): return discount
         }
     }
+    
+    func isEqualTo(_ rhs: Accessable) -> Bool {
+        guard let discountAccess = rhs as? DiscountAccess else {
+            return false
+        }
+
+        return self == discountAccess
+    }
+    
+    static func ==(lhs: DiscountAccess, rhs: DiscountAccess) -> Bool {
+        switch (lhs, rhs) {
+        case (.food, .food), (.merchandise, .merchandise): return true
+        default: return false
+        }
+    }
 }

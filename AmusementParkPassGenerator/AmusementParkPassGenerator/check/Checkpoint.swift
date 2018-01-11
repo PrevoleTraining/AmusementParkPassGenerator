@@ -13,8 +13,8 @@ class Checkpoint<A: Accessable>: Checkpointable {
         self.access = access
     }
     
-    func check(pass: Passable) -> Bool {
-        return pass.hasAccess(access: access)
+    func swipe(pass: Passable) -> SwipeResult {
+        return .denied(reason: "No access")
     }
 }
 

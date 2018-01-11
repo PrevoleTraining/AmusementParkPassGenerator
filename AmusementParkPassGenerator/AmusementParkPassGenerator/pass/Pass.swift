@@ -6,20 +6,26 @@
 //  Copyright © 2018 prevole.ch. All rights reserved.
 //
 
+import Foundation
+
 class Pass: Passable {
+    var uuid: UUID
     var accesses: [Accessable]
     
     init(accesses: [Accessable]) {
         self.accesses = accesses
+        self.uuid = UUID()
     }
     
     func hasAccess(access: Accessable) -> Bool {
-        for ownAccess in accesses {
-            if ownAccess == access {
+        for accessToEvaluate in accesses {
+            if accessToEvaluate.isEqualTo(access) {
                 return true
             }
         }
         
         return false
     }
+    
+
 }

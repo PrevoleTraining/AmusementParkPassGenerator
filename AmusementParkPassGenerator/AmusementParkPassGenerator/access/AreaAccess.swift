@@ -22,4 +22,12 @@ enum AreaAccess: String, Accessable {
         case .office: return "Office Areas"
         }
     }
+    
+    func isEqualTo(_ rhs: Accessable) -> Bool {
+        guard let areaAccess = rhs as? AreaAccess else {
+            return false
+        }
+        
+        return self == areaAccess
+    }
 }
