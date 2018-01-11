@@ -23,4 +23,10 @@ enum DiscountAccess: Accessable {
         case .food(let discount), .merchandise(let discount): return "\(discount)% on \(self)"
         }
     }
+    
+    func discount() -> Int {
+        switch self {
+        case .food(let discount), .merchandise(let discount): return discount
+        }
+    }
 }
