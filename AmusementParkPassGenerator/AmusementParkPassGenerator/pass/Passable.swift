@@ -11,6 +11,7 @@ import Foundation
 protocol Passable {
     var uuid: UUID { get }
     var accesses: [Accessable] { get }
+    var birthDate: Date? { get }
     
     func hasAccess(access: Accessable) -> Bool
 }

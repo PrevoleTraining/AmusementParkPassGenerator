@@ -11,10 +11,16 @@ import Foundation
 class Pass: Passable {
     var uuid: UUID
     var accesses: [Accessable]
+    var birthDate: Date?
     
     init(accesses: [Accessable]) {
         self.accesses = accesses
         self.uuid = UUID()
+    }
+    
+    convenience init(accesses: [Accessable], birthDate: Date) {
+        self.init(accesses: accesses)
+        self.birthDate = birthDate
     }
     
     func hasAccess(access: Accessable) -> Bool {
@@ -26,6 +32,4 @@ class Pass: Passable {
         
         return false
     }
-    
-
 }

@@ -22,12 +22,11 @@ class RideCheckpoint: Checkpoint<RideAccess> {
         lastCheck = (pass: pass, date: Date())
         
         if let previousCheck = previousCheck, previousCheck.pass.uuid == pass.uuid && previousCheck.date.timeIntervalSinceNow > antiCheatDelay {
-            return .denied(reason: "Attempt ride access cheating")
-        } else
-        if pass.hasAccess(access: access) {
-            return .granted
+            return SwipeResult(status: .denied, message: "Attempt ride access cheating")
+        } else if pass.hasAccess(access: access) {
+            return SwipeResult(status: .granted)
         } else {
-            return .denied(reason: "No access to this ride")
+            return SwipeResult(status: .denied, message: "No access to this ride")
         }
     }
 

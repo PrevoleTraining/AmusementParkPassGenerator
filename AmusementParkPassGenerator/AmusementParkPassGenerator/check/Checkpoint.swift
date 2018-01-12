@@ -14,7 +14,7 @@ class Checkpoint<A: Accessable>: Checkpointable {
     }
     
     func swipe(pass: Passable) -> SwipeResult {
-        return .denied(reason: "No access")
+        return SwipeResult(status: .denied, message: "No access")
     }
 }
 

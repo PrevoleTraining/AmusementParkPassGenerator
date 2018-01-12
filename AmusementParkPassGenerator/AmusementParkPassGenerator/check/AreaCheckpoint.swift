@@ -11,8 +11,7 @@ class AreaCheckpoint: Checkpoint<AreaAccess> {
         if pass.hasAccess(access: access) {
             return SwipeResult(status: .granted)
         } else {
-            return SwipeResult(status: .denied).add(message: "No access granted to \(access.description())")
+            return SwipeResult(status: .denied, message: "No access granted to \(access.description())")
         }
     }
-
 }

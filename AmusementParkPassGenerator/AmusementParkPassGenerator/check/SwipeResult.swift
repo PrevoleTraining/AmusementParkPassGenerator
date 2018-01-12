@@ -14,9 +14,13 @@ struct SwipeResult {
         self.status = status
     }
     
-    mutating func add(message: String) -> SwipeResult {
+    init(status: Status, message: String) {
+        self.init(status: status)
+        self.messages.append(message)
+    }
+    
+    mutating func add(message: String) {
         messages.append(message)
-        return self
     }
     
     enum Status {

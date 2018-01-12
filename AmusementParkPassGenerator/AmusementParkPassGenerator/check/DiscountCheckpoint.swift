@@ -9,9 +9,9 @@
 class DiscountCheckpoint: Checkpoint<DiscountAccess> {
     override func swipe(pass: Passable) -> SwipeResult {
         if pass.hasAccess(access: access) {
-            return .grantedForDiscount(discount: access.discount())
+            return SwipeResult(status: .grantedForDiscount(discount: access.discount()))
         } else {
-            return .denied(reason: "No discount granted for \(access.description())")
+            return SwipeResult(status: .denied, message: "No discount granted for \(access.description())")
         }
     }
 }
