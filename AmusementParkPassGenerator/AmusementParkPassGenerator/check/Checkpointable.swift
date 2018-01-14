@@ -18,7 +18,7 @@ extension Checkpointable {
         
         switch result.status {
         case .granted, .grantedForDiscount:
-            if let birthDate = pass.birthDate, Date().isToday(birthDate: birthDate) {
+            if let birthDate = pass.birthDate, Date().isToday(date: birthDate) {
                 result.add(message: "Happy Birthday! Enjoy the day in our Theme Park")
             }
             return result

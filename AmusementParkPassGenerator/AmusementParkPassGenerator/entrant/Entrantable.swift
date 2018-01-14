@@ -9,4 +9,7 @@
 protocol Entrantable {
     var category: EntrantCategory { get }
     var subCategory: EntrantSubCategory? { get }
+    
+    var accesses: [Accessable]? { get }
+    var personalInfo: [PersonalInfo]? { get }
 }

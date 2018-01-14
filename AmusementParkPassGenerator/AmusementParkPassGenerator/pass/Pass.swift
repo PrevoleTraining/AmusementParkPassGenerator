@@ -18,18 +18,18 @@ class Pass: Passable {
         self.uuid = UUID()
     }
     
-    convenience init(accesses: [Accessable], birthDate: Date) {
-        self.init(accesses: accesses)
-        self.birthDate = birthDate
+    func hasAccess(access: Accessable) -> Bool {
+        return findAccess(access: access) != nil
     }
     
-    func hasAccess(access: Accessable) -> Bool {
+    func findAccess(access: Accessable) -> Accessable? {
         for accessToEvaluate in accesses {
             if accessToEvaluate.isEqualTo(access) {
-                return true
+                return accessToEvaluate
             }
         }
         
-        return false
+        return nil
     }
 }
+

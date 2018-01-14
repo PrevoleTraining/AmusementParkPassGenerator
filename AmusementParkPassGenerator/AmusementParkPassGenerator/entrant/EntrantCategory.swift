@@ -9,7 +9,7 @@
 enum EntrantCategory: String, Descriptable {
     case guest
     case employee
-    case manager
+    case vendor
     
     func description() -> String {
         return "\(self)".capitalizingFirstLetter()
@@ -18,8 +18,8 @@ enum EntrantCategory: String, Descriptable {
     func subCategories() -> [EntrantSubCategory] {
         switch self {
         case .guest: return [.child, .classic, .vip]
-        case .employee: return [.hourlyFood, .hourlyRide, .hourlyMaintenance]
-        case .manager: return []
+        case .employee: return [.hourlyFood, .hourlyRide, .hourlyMaintenance, .manager]
+        case .vendor: return []
         }
     }
 }

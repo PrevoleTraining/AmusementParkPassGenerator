@@ -14,5 +14,7 @@ protocol Passable {
     var birthDate: Date? { get }
     
     func hasAccess(access: Accessable) -> Bool
+    
+    func findAccess(access: Accessable) -> Accessable?
 }
 

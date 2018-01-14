@@ -7,11 +7,15 @@
 //
 
 class DiscountCheckpoint: Checkpoint<DiscountAccess> {
+    override init(access: DiscountAccess) {
+        super.init(access: access)
+    }
+    
     override func swipe(pass: Passable) -> SwipeResult {
-        if pass.hasAccess(access: access) {
-            return SwipeResult(status: .grantedForDiscount(discount: access.discount()))
+        if let accessFound = pass.findAccess(access: access) as? DiscountAccess {
+            return SwipeResult(status: .grantedForDiscount(discount: accessFound))
         } else {
-            return SwipeResult(status: .denied, message: "No discount granted for \(access.description())")
+            return SwipeResult(status: .denied, message: access.description())
         }
     }
 }

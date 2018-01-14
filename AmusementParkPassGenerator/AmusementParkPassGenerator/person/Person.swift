@@ -23,4 +23,15 @@ class Person: Personable {
     init(pass: Passable) {
         self.pass = pass
     }
+    
+    convenience init(pass: Passable, firstName: String, lastName: String, street: String, city: String, state: String, zipCode: String, birthDate: Date?) {
+        self.init(pass: pass)
+        self.firstName = firstName
+        self.lastName = lastName
+        self.street = street
+        self.city = city
+        self.state = state
+        self.zipCode = zipCode
+        self.birthDate = birthDate
+    }
 }

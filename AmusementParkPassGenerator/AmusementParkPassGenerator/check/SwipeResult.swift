@@ -6,10 +6,18 @@
 //  Copyright © 2018 prevole.ch. All rights reserved.
 //
 
-struct SwipeResult {
+struct SwipeResult: CustomStringConvertible {
     var status: Status
     var messages: [String] = []
     
+    var description: String {
+        switch status {
+        case .granted: return "Access authorized"
+        case .grantedForDiscount(let discount): return "Access authorized for discount: \(discount.description())"
+        case .denied: return "Access denied"
+        }
+    }
+
     init(status: Status) {
         self.status = status
     }
@@ -25,7 +33,7 @@ struct SwipeResult {
     
     enum Status {
         case granted
-        case grantedForDiscount(discount: Int)
+        case grantedForDiscount(discount: DiscountAccess)
         case denied
     }
 }

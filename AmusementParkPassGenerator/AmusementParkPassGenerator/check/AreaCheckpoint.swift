@@ -7,6 +7,10 @@
 //
 
 class AreaCheckpoint: Checkpoint<AreaAccess> {
+    override init(access: AreaAccess) {
+        super.init(access: access)
+    }
+    
     override func swipe(pass: Passable) -> SwipeResult {
         if pass.hasAccess(access: access) {
             return SwipeResult(status: .granted)

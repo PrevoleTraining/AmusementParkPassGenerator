@@ -27,7 +27,11 @@ struct DayMonthYear: Equatable {
 }
 
 extension Date {
-    func isToday(birthDate: Date) -> Bool {
-        return DayMonthYear.create(from: self) == DayMonthYear.create(from: birthDate)
+    func isToday(date: Date) -> Bool {
+        return DayMonthYear.create(from: self) == DayMonthYear.create(from: date)
+    }
+    
+    func isLessThanFiveYearsFromNow(date: Date) -> Bool {
+        return abs(DayMonthYear.create(from: date).year - DayMonthYear.create(from: self).year) < 5
     }
 }

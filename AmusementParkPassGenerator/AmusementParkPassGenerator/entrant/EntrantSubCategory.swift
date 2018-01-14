@@ -13,6 +13,7 @@ enum EntrantSubCategory: String, Descriptable {
     case hourlyFood
     case hourlyRide
     case hourlyMaintenance
+    case manager
     
     func description() -> String {
         switch self {
@@ -22,6 +23,7 @@ enum EntrantSubCategory: String, Descriptable {
         case .hourlyFood: return "Hourly Employee - Food Services"
         case .hourlyRide: return "Hourly Employee - Ride Services"
         case .hourlyMaintenance: return "Hourly Employee - Maintenance"
+        case .manager: return "Manager"
         }
     }
 }
