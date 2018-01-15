@@ -9,6 +9,17 @@
 import Foundation
 import UIKit
 
+/**
+ * DISCLAIMER: The code in the view controller is here only for testing/experimenting
+ * and to to provide a way to play with the business models. Therefore, the code is
+ * provided as is and is not annotated.
+ *
+ * You will be able to test:
+ * - Valid entrants
+ * - Invalid person (personal info validation)
+ * - Access control (ride, areas and discounts)
+ * - The 5s enforcement on the ride checkpoint
+ */
 class ViewController: UIViewController {
     var entrants: [Entrantable]
     

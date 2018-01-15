@@ -36,11 +36,12 @@ class EntrantableUnarchiver {
                     let subCategory = EntrantSubCategory(rawValue: rawSubCategory) {
                     entrant = Entrant(category: category, subCategory: subCategory)
                 } else {
-                    entrant = Entrant(category: category)
+                    fatalError("No subCategory for \(category)")
                 }
                 
                 var accesses: [Accessable] = []
                 
+                // Process the different accesses
                 accesses.append(contentsOf: extractAccesses(of: .area, from: itemDictionary))
                 accesses.append(contentsOf: extractAccesses(of: .ride, from: itemDictionary))
                 accesses.append(contentsOf: extractDiscountAccesses(from: itemDictionary))
@@ -58,6 +59,15 @@ class EntrantableUnarchiver {
         return entrants
     }
 
+    /**
+     * Extract the accesses for an access category
+     *
+     * - parameters:
+     *  - of: The type of access to extract
+     *  - from: The dictionary where to find the accesses
+     *
+     * returns: The accesses extracted
+     */
     static func extractAccesses(of type: AccessType, from itemDictionary: [String: Any]) -> [Accessable] {
         var accesses: [Accessable] = []
         
@@ -74,6 +84,15 @@ class EntrantableUnarchiver {
         return accesses
     }
 
+    /**
+     * Extract the discount accesses. These accesses are a bit different as they
+     * contain the discount value to grant.
+     *
+     * - parameters:
+     *  - from: The item dictionary that contains the accesses
+     *
+     * - returns: The array of accesses extracted
+     */
     static func extractDiscountAccesses(from itemDictionary: [String: Any]) -> [Accessable] {
         var accesses: [Accessable] = []
         
@@ -90,6 +109,14 @@ class EntrantableUnarchiver {
         return accesses
     }
 
+    /**
+     * Extract the list of personal info required for the access profile
+     *
+     * - parameters:
+     *  - from: The item dictionary where to find the personal info fields
+     *
+     * - returns: The array of personal info fields required by the access profile
+     */
     static func extractPersonalInfo(from itemDictionary: [String: Any]) -> [PersonalInfo] {
         var personalInfo: [PersonalInfo] = []
         
@@ -107,11 +134,22 @@ class EntrantableUnarchiver {
     }
 }
 
+/**
+ * Access type acts as a factory
+ */
 enum AccessType {
     case area
     case ride
     case discount
     
+    /**
+     * Build an access object of the right type according to the type of the
+     * rights extracted.
+     *
+     * - parameters:
+     *  - rawValue: The raw value to build the access object
+     *  - value: The discount for the discount access
+     */
     func build(rawValue: String, value: Int = 0) -> Accessable? {
         switch self {
         case .area: return AreaAccess(rawValue: rawValue)

@@ -6,6 +6,9 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
+/**
+ * Main categories of entrant
+ */
 enum EntrantCategory: String, Descriptable {
     case guest
     case employee
@@ -15,6 +18,11 @@ enum EntrantCategory: String, Descriptable {
         return "\(self)".capitalizingFirstLetter()
     }
     
+    /**
+     * Retrieve the collection of sub categories for a given category
+     *
+     * - returns: The array of sub categories
+     */
     func subCategories() -> [EntrantSubCategory] {
         switch self {
         case .guest: return [.child, .classic, .vip]

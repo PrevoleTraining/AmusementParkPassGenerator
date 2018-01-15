@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ * A person is identified by his personal data that
+ * are required depending the entrant category and sub category
+ */
 protocol Personable: CustomStringConvertible {
     var firstName: String? { get set }
     var lastName: String? { get set }

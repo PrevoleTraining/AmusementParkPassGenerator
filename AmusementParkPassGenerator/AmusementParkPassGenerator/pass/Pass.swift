@@ -8,11 +8,19 @@
 
 import Foundation
 
+/**
+ * Passable implementation
+ */
 class Pass: Passable {
     var uuid: UUID
     var accesses: [Accessable]
     var birthDate: Date?
     
+    /**
+     * Constructor
+     *
+     * - parameter accesses: The list of granted accesses
+     */
     init(accesses: [Accessable]) {
         self.accesses = accesses
         self.uuid = UUID()

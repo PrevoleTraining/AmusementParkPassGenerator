@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ * The different personal info that can be required for a person
+ *
+ * For example: Free child guests are required to provide their birth date
+ */
 enum PersonalInfo: String, Descriptable {
     case dateOfBirthUnderFive
     case firstName
@@ -28,6 +33,13 @@ enum PersonalInfo: String, Descriptable {
         }
     }
     
+    /**
+     * Check if a personal info is valid
+     *
+     * - parameter person: The person to validate
+     *
+     * - returns: The personal info error or nil if valid
+     */
     func isValid(person: Personable) -> PersonalInfoError? {
         func isBlank(str: String?, error: PersonalInfoError) -> PersonalInfoError? {
             guard let str = str else {
@@ -58,6 +70,9 @@ enum PersonalInfo: String, Descriptable {
     }
 }
 
+/**
+ * Personal info validation errors
+ */
 enum PersonalInfoError: Error, Descriptable {
     case invalidBirthDateUnderFiveYears
     case invalidFirstName
@@ -79,6 +94,15 @@ enum PersonalInfoError: Error, Descriptable {
 }
 
 extension PersonalInfo {
+    /**
+     * Validate all the collection of personal info of a person
+     *
+     * - parameters:
+     *  - person: The person to validate
+     *  - personalInfo: The personal info collection to validate
+     *
+     * - returns: Collection of validation errors, empty collection if no error
+     */
     static func validate(person: Personable, personalInfo: [PersonalInfo]) -> [PersonalInfoError] {
         var errors: [PersonalInfoError] = []
         

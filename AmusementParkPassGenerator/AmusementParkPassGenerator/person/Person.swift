@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ * Implementation of Personable
+ */
 class Person: Personable {
     var firstName: String?
     var lastName: String?
@@ -20,10 +23,28 @@ class Person: Personable {
     
     var pass: Passable
     
+    /**
+     * Constructor
+     *
+     * - parameter pass: The pass given to the person
+     */
     init(pass: Passable) {
         self.pass = pass
     }
     
+    /**
+     * Constructor
+     *
+     * - parameters:
+     *  - pass: The pass given to the person
+     *  - firstName: First name
+     *  - lastName: Last name
+     *  - street: Street
+     *  - city: City
+     *  - state: State
+     *  - zipCode: ZIP Code
+     *  - birthDate: Birth date
+     */
     convenience init(pass: Passable, firstName: String, lastName: String, street: String, city: String, state: String, zipCode: String, birthDate: Date?) {
         self.init(pass: pass)
         self.firstName = firstName

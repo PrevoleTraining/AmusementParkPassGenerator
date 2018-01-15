@@ -6,6 +6,9 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
+/**
+ * Sub categories of access profiles
+ */
 enum EntrantSubCategory: String, Descriptable {
     case child
     case classic
