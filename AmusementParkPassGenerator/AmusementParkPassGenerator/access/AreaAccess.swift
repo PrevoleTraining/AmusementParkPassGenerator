@@ -6,6 +6,9 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
+/**
+ * Represent an area access in the park
+ */
 enum AreaAccess: String, Accessable {
     case amusement
     case kitchen

@@ -6,15 +6,29 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
+/**
+ * The discount access is a bit different from the other accesses.
+ * This access is associated to a percentage granted as a discount in
+ * the shops of the park
+ */
 enum DiscountAccess: Accessable {
     case food(discount: Int)
     case merchandise(discount: Int)
     
-    static func discount(name: String, discount: Int) -> DiscountAccess? {
+    /**
+     * Create a discount access from its name and a discount
+     *
+     * - parameters:
+     *  - name: The name of the discount to lookup
+     *  - discount: The discount to associate
+     *
+     * throws: An error of type DiscountAccessError
+     */
+    static func discount(name: String, discount: Int) throws -> DiscountAccess? {
         switch name {
         case "food": return DiscountAccess.food(discount: discount)
         case "merchandise": return DiscountAccess.merchandise(discount: discount)
-        default: return nil
+        default: throw DiscountAccessError.noSuchDiscountType
         }
     }
     
@@ -22,12 +36,6 @@ enum DiscountAccess: Accessable {
         switch self {
         case .food(let discount): return "\(discount)% on food"
         case .merchandise(let discount): return "\(discount)% on merchandise"
-        }
-    }
-    
-    func discount() -> Int {
-        switch self {
-        case .food(let discount), .merchandise(let discount): return discount
         }
     }
     
@@ -39,10 +47,31 @@ enum DiscountAccess: Accessable {
         return self == discountAccess
     }
     
+    /**
+     * Two discount access are equal if the types are equals.
+     * The discount can be different.
+     *
+     * - parameters:
+     *  - lhs: Left hand sign discount access
+     *  - rhs: Right hand sign discount access
+     *
+     * returns: True if two discount accesses are of the same type
+     */
     static func ==(lhs: DiscountAccess, rhs: DiscountAccess) -> Bool {
         switch (lhs, rhs) {
         case (.food, .food), (.merchandise, .merchandise): return true
         default: return false
         }
     }
+}
+
+/**
+ * Errors of discount access. The check of the access are
+ * managed with a different error enumeration.
+ */
+enum DiscountAccessError: Error {
+    /*
+     * When we do not find a enum value from a rawValue
+     */
+    case noSuchDiscountType
 }

@@ -6,6 +6,11 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
+/**
+ * Represent a ride access in the park. It does not include
+ * the access to the ride control area which is handle in
+ * the area accesses
+ */
 enum RideAccess: String, Accessable, Equatable {
     case allRides
     case skipRideLines

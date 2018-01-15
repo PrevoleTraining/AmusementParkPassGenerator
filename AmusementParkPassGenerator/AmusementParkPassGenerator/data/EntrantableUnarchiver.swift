@@ -116,7 +116,14 @@ enum AccessType {
         switch self {
         case .area: return AreaAccess(rawValue: rawValue)
         case .ride: return RideAccess(rawValue: rawValue)
-        case .discount: return DiscountAccess.discount(name: rawValue, discount: value)
+        case .discount:
+            do {
+                return try DiscountAccess.discount(name: rawValue, discount: value)
+            } catch DiscountAccessError.noSuchDiscountType {
+                fatalError("Unable to find the discount \(rawValue)")
+            } catch let unknownError {
+                fatalError(unknownError.localizedDescription)
+            }
         }
     }
 }
