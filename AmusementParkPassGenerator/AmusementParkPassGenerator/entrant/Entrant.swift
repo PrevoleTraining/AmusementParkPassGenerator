@@ -27,4 +27,17 @@ class Entrant: Entrantable {
         self.category = category
         self.subCategory = subCategory
     }
+    
+    /**
+     * Constructor
+     *
+     * - parameter category: The category
+     */
+    init(category: EntrantCategory) {
+        self.category = category
+    }
+    
+    func description() -> String {
+        return "Category: \(category.rawValue), subCategory: \(subCategory?.rawValue ?? "n/a")"
+    }
 }

@@ -16,7 +16,7 @@ class EntrantableUnarchiver {
     static let log = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "data")
     
     /**
-     Convert the array of entrtsan not typed to the entrants
+     Convert the array of entrants not typed to the entrants
      
      - parameter fromArray: Array of untyped entrants
      
@@ -36,7 +36,7 @@ class EntrantableUnarchiver {
                     let subCategory = EntrantSubCategory(rawValue: rawSubCategory) {
                     entrant = Entrant(category: category, subCategory: subCategory)
                 } else {
-                    fatalError("No subCategory for \(category)")
+                    entrant = Entrant(category: category)
                 }
                 
                 var accesses: [Accessable] = []

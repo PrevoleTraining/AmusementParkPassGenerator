@@ -17,7 +17,7 @@ protocol Entrantable {
     
     // The collection of accesses granted into the park
     var accesses: [Accessable]? { get }
-    
-    // The collection of required personal information 
+
+    // The collection of required personal information
     var personalInfo: [PersonalInfo]? { get }
 }

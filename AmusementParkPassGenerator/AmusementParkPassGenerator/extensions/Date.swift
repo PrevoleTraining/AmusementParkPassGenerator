@@ -11,7 +11,7 @@ import Foundation
 /**
  * Represent a date with the day, month and year components
  */
-struct DayMonthYear: Equatable {
+struct DayMonthYear: Equatable, Comparable {
     let day: Int
     let month: Int
     let year: Int
@@ -29,17 +29,14 @@ struct DayMonthYear: Equatable {
         )
     }
     
-    /**
-     * Equality between to day, month and year representations
-     *
-     * - parameters:
-     *  - lhs: Left hand sign representation
-     *  - rhs: Right hand sign representation
-     *
-     * - returns: True if day, month and year are equal
-     */
     static func ==(lhs: DayMonthYear, rhs: DayMonthYear) -> Bool {
         return lhs.day == rhs.day && lhs.month == rhs.month && lhs.year == rhs.year
+    }
+    
+    static func <(lhs: DayMonthYear, rhs: DayMonthYear) -> Bool {
+        return lhs.year < rhs.year
+            || (lhs.year == rhs.year && lhs.month < rhs.month)
+            || (lhs.year == rhs.year && lhs.month == rhs.month && lhs.day < rhs.day)
     }
 }
 
@@ -59,10 +56,59 @@ extension Date {
      * Check if a two dates have a difference less than five years.
      *
      * - parameter date: The date to compare with
+     * - parameter threshold: The number of years to check
      *
      * - returns: True if two dates' difference is less than five years
      */
-    func isLessThanFiveYearsFromNow(date: Date) -> Bool {
-        return abs(DayMonthYear.create(from: date).year - DayMonthYear.create(from: self).year) < 5
+    func isLessThanYearsFromNow(date: Date, threshold: Int) -> Bool {
+        return abs(DayMonthYear.create(from: date).year - DayMonthYear.create(from: self).year) < threshold
+    }
+
+    /**
+     * Check if a two dates have a difference over than sixty four years.
+     *
+     * - parameter date: The date to compare with
+     * - parameter threshold: The number of years to check
+     *
+     * - returns: True if two dates' difference is less than sixyty four years
+     */
+    func isGreaterThanYearsFromNow(date: Date, threshold: Int) -> Bool {
+        return abs(DayMonthYear.create(from: date).year - DayMonthYear.create(from: self).year) > threshold
+    }
+    
+    /**
+     * Check if a two dates have a difference that is reasonable for an age.
+     *
+     * - parameter date: The date to compare with
+     * - parameter min: The minimum acceptable years
+     * - parameter max: The maximum acceptable years
+     *
+     * - returns: True if two dates' difference is reasonable
+     */
+    func isReasonableDateFromNow(date: Date, min: Int, max: Int) -> Bool {
+        let difference = abs(DayMonthYear.create(from: date).year - DayMonthYear.create(from: self).year)
+        return difference >= min && difference <= max
+    }
+    
+    /**
+     * Check if the given date is earlier than self
+     *
+     * - parameter date: The date to be in the past from the current date
+     *
+     * - returns: True if the current date is in the future
+     */
+    func isInFutureFrom(date: Date) -> Bool {
+        return DayMonthYear.create(from: date) < DayMonthYear.create(from: self)
+    }
+    
+    /**
+     * Format a date with a default format: yyyy/MM/dd
+     *
+     * - returns: The formatted date as string
+     */
+    func defaultFormat() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter.string(from: self)
     }
 }

@@ -18,8 +18,15 @@ class Person: Personable {
     var city: String?
     var state: String?
     var zipCode: String?
-    
+    var ssn: String?
+
+    var managementTier: ManagementTier?
+
     var birthDate: Date?
+    var visitDate: Date?
+    
+    var project: Any?
+    var vendor: Any?
     
     var pass: Passable
     

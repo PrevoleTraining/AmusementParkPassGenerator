@@ -23,4 +23,19 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+    
+    var isInt: Bool {
+        return Int(self) != nil
+    }
+    
+    /**
+     * Check if a string match a pattern
+     *
+     * - parameter pattern: The pattern to search
+     *
+     * - returns: True if found, false otherwise
+     */
+    func match(pattern: String) -> Bool {
+        return range(of: pattern, options: .regularExpression, range: nil, locale: nil) != nil
+    }
 }

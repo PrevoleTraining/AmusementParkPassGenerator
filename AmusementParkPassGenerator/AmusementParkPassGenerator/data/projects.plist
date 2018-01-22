@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>number</key>
+		<string>1001</string>
+		<key>areaAccess</key>
+		<array>
+			<string>amusement</string>
+			<string>rideControl</string>
+		</array>
+	</dict>
+	<dict>
+		<key>number</key>
+		<string>1002</string>
+		<key>areaAccess</key>
+		<array>
+			<string>amusement</string>
+			<string>rideControl</string>
+			<string>maintenance</string>
+		</array>
+	</dict>
+	<dict>
+		<key>number</key>
+		<string>1003</string>
+		<key>areaAccess</key>
+		<array>
+			<string>amusement</string>
+			<string>rideControl</string>
+			<string>kitchen</string>
+			<string>maintenance</string>
+			<string>office</string>
+		</array>
+	</dict>
+	<dict>
+		<key>number</key>
+		<string>2001</string>
+		<key>areaAccess</key>
+		<array>
+			<string>office</string>
+		</array>
+	</dict>
+	<dict>
+		<key>number</key>
+		<string>2002</string>
+		<key>areaAccess</key>
+		<array>
+			<string>kitchen</string>
+			<string>maintenance</string>
+		</array>
+	</dict>
+</array>
+</plist>

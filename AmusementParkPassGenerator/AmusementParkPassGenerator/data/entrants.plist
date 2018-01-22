@@ -53,7 +53,67 @@
 		</array>
 		<key>personalInfo</key>
 		<array>
-			<string>dateOfBirthUnderFive</string>
+			<string>birthDateJunior</string>
+		</array>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>guest</string>
+		<key>subCategory</key>
+		<string>season</string>
+		<key>areaAccess</key>
+		<array>
+			<string>amusement</string>
+		</array>
+		<key>rideAccess</key>
+		<array>
+			<string>allRides</string>
+			<string>skipRideLines</string>
+		</array>
+		<key>discountAccess</key>
+		<dict>
+			<key>food</key>
+			<integer>10</integer>
+			<key>merchandise</key>
+			<integer>20</integer>
+		</dict>
+		<key>personalInfo</key>
+		<array>
+			<string>firstName</string>
+			<string>lastName</string>
+			<string>street</string>
+			<string>city</string>
+			<string>state</string>
+			<string>zip</string>
+			<string>birthDate</string>
+		</array>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>guest</string>
+		<key>subCategory</key>
+		<string>senior</string>
+		<key>areaAccess</key>
+		<array>
+			<string>amusement</string>
+		</array>
+		<key>rideAccess</key>
+		<array>
+			<string>allRides</string>
+			<string>skipRideLines</string>
+		</array>
+		<key>discountAccess</key>
+		<dict>
+			<key>food</key>
+			<integer>10</integer>
+			<key>merchandise</key>
+			<integer>10</integer>
+		</dict>
+		<key>personalInfo</key>
+		<array>
+			<string>firstName</string>
+			<string>lastName</string>
+			<string>birthDateSenior</string>
 		</array>
 	</dict>
 	<dict>
@@ -85,6 +145,8 @@
 			<string>city</string>
 			<string>state</string>
 			<string>zip</string>
+			<string>ssn</string>
+			<string>birthDate</string>
 		</array>
 	</dict>
 	<dict>
@@ -116,6 +178,8 @@
 			<string>city</string>
 			<string>state</string>
 			<string>zip</string>
+			<string>ssn</string>
+			<string>birthDate</string>
 		</array>
 	</dict>
 	<dict>
@@ -149,6 +213,30 @@
 			<string>city</string>
 			<string>state</string>
 			<string>zip</string>
+			<string>ssn</string>
+			<string>birthDate</string>
+		</array>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>employee</string>
+		<key>subCategory</key>
+		<string>contract</string>
+		<key>rideAccess</key>
+		<array>
+			<string>allRides</string>
+		</array>
+		<key>personalInfo</key>
+		<array>
+			<string>firstName</string>
+			<string>lastName</string>
+			<string>street</string>
+			<string>city</string>
+			<string>state</string>
+			<string>zip</string>
+			<string>ssn</string>
+			<string>birthDate</string>
+			<string>project</string>
 		</array>
 	</dict>
 	<dict>
@@ -183,6 +271,21 @@
 			<string>city</string>
 			<string>state</string>
 			<string>zip</string>
+			<string>ssn</string>
+			<string>birthDate</string>
+			<string>managementTier</string>
+		</array>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>vendor</string>
+		<key>personalInfo</key>
+		<array>
+			<string>firstName</string>
+			<string>lastName</string>
+			<string>vendor</string>
+			<string>birthDate</string>
+			<string>visitDate</string>
 		</array>
 	</dict>
 </array>
