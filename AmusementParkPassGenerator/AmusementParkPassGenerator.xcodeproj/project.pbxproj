@@ -22,6 +22,8 @@
 		FDC70755201624B0008674F9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70754201624B0008674F9 /* Identifiable.swift */; };
 		FDC7075720162584008674F9 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075620162584008674F9 /* Vendor.swift */; };
 		FDC70759201626BD008674F9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70758201626BD008674F9 /* Project.swift */; };
+		FDC7075E20163929008674F9 /* ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075D20163929008674F9 /* ApplicationColor.swift */; };
+		FDC707642017D69B008674F9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC707632017D69B008674F9 /* DataProvider.swift */; };
 		FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */; };
 		FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */; };
 		FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC120054F1900AD2B71 /* Accessable.swift */; };
@@ -80,6 +82,8 @@
 		FDC70754201624B0008674F9 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		FDC7075620162584008674F9 /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		FDC70758201626BD008674F9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FDC7075D20163929008674F9 /* ApplicationColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationColor.swift; sourceTree = "<group>"; };
+		FDC707632017D69B008674F9 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrantable.swift; sourceTree = "<group>"; };
 		FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
 		FDEDFCC120054F1900AD2B71 /* Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessable.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				FDEDFCC52005538700AD2B71 /* entrant */,
 				FDEDFCE72006DDE000AD2B71 /* pass */,
 				FDEDFCDB2006AB4900AD2B71 /* person */,
+				FDC7075A20163668008674F9 /* ui */,
 				FDEDFCE22006AE7200AD2B71 /* Descriptable.swift */,
 				FDC70754201624B0008674F9 /* Identifiable.swift */,
 				FD4E2528200408C9009F5779 /* AppDelegate.swift */,
@@ -174,6 +179,14 @@
 				FD4E253F200408C9009F5779 /* Info.plist */,
 			);
 			path = AmusementParkPassGeneratorTests;
+			sourceTree = "<group>";
+		};
+		FDC7075A20163668008674F9 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FDC7075D20163929008674F9 /* ApplicationColor.swift */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		FDEDFCBA20054E3D00AD2B71 /* access */ = {
@@ -211,6 +224,7 @@
 				FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */,
 				FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */,
 				FDC707502016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift */,
+				FDC707632017D69B008674F9 /* DataProvider.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -392,9 +406,11 @@
 				FDC7075320162450008674F9 /* AreaRestrictedEntrant.swift in Sources */,
 				FDEDFCF82007F32200AD2B71 /* SwipeResult.swift in Sources */,
 				FDEDFCF02006E3DE00AD2B71 /* AreaCheckpoint.swift in Sources */,
+				FDC7075E20163929008674F9 /* ApplicationColor.swift in Sources */,
 				FDEDFCD22005780A00AD2B71 /* PListConverterError.swift in Sources */,
 				FDEDFCE32006AE7200AD2B71 /* Descriptable.swift in Sources */,
 				FDC70759201626BD008674F9 /* Project.swift in Sources */,
+				FDC707642017D69B008674F9 /* DataProvider.swift in Sources */,
 				FDEDFCFA2009694300AD2B71 /* Date.swift in Sources */,
 				FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */,
 			);

@@ -111,7 +111,6 @@ class TestViewController: UIViewController {
         do {
             let array = try PlistConverter.array(fromFile: "entrants", ofType: "plist")
             entrants = try EntrantableUnarchiver.entrants(fromArray: array)
-            print(entrants)
         } catch let error {
             fatalError("\(error)")
         }

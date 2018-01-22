@@ -25,10 +25,22 @@ enum EntrantSubCategory: String, Descriptable {
         switch self {
         case .child: return "Free Child"
         case .vip: return "VIP"
-        case .hourlyFood: return "Hourly Employee - Food Services"
-        case .hourlyRide: return "Hourly Employee - Ride Services"
-        case .hourlyMaintenance: return "Hourly Employee - Maintenance"
+        case .hourlyFood: return "H. Food Serv."
+        case .hourlyRide: return "H. Ride Serv."
+        case .hourlyMaintenance: return "H. Maintenance"
         case .manager, .classic, .senior, .season, .contract: return "\(self)".capitalizingFirstLetter()
+        }
+    }
+
+    /**
+     * Retrieve the category for a sub category
+     *
+     * - returns: The category
+     */
+    func category() -> EntrantCategory {
+        switch self {
+        case .child, .vip, .classic, .senior, .season: return .guest
+        case .hourlyFood, .hourlyRide, .hourlyMaintenance, .contract, .manager: return .employee
         }
     }
 }

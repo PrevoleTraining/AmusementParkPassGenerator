@@ -25,8 +25,8 @@ enum EntrantCategory: String, Descriptable {
      */
     func subCategories() -> [EntrantSubCategory] {
         switch self {
-        case .guest: return [.child, .classic, .vip]
-        case .employee: return [.hourlyFood, .hourlyRide, .hourlyMaintenance, .manager]
+        case .guest: return [.child, .classic, .vip, .senior, .season]
+        case .employee: return [.hourlyFood, .hourlyRide, .hourlyMaintenance, .manager, .contract]
         case .vendor: return []
         }
     }
