@@ -85,4 +85,20 @@ class DataProvider {
         
         return nil
     }
+    
+    func findProject(number: String?) -> Project? {
+        if let number = number {
+            return projects.filter({ $0.number == number }).first
+        } else {
+            return nil
+        }
+    }
+    
+    func findVendor(name: String?) -> Vendor? {
+        if let name = name {
+            return vendors.filter({ $0.name == name }).first
+        } else {
+            return nil
+        }
+    }
 }

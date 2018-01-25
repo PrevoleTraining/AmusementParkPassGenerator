@@ -43,7 +43,7 @@ class TestViewController: UIViewController {
     
     lazy var people: [UIButton: Personable] = {
         func createPerson(entrant: Entrantable, first: String, last: String, street: String, city: String, zip: String, state: String, birthDate: Date? = nil) -> Person {
-            return Person(pass: Pass(accesses: entrant.accesses!), firstName: first, lastName: last, street: street, city: city, state: state, zipCode: zip, birthDate: birthDate)
+            return Person(pass: Pass(accesses: entrant.accesses!), firstName: first, lastName: last, street: street, city: city, state: state, zipCode: zip, birthDate: birthDate, ssn: nil, managementTier: nil, visitDate: nil, project: nil, vendor: nil)
         }
         
         return [

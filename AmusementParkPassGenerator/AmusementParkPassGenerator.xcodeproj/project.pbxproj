@@ -24,6 +24,7 @@
 		FDC70759201626BD008674F9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70758201626BD008674F9 /* Project.swift */; };
 		FDC7075E20163929008674F9 /* ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075D20163929008674F9 /* ApplicationColor.swift */; };
 		FDC707642017D69B008674F9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC707632017D69B008674F9 /* DataProvider.swift */; };
+		FDC70768201A95ED008674F9 /* ValidationErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */; };
 		FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */; };
 		FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */; };
 		FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC120054F1900AD2B71 /* Accessable.swift */; };
@@ -84,6 +85,7 @@
 		FDC70758201626BD008674F9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		FDC7075D20163929008674F9 /* ApplicationColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationColor.swift; sourceTree = "<group>"; };
 		FDC707632017D69B008674F9 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorViewController.swift; sourceTree = "<group>"; };
 		FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrantable.swift; sourceTree = "<group>"; };
 		FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
 		FDEDFCC120054F1900AD2B71 /* Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessable.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				FD4E2528200408C9009F5779 /* AppDelegate.swift */,
 				FD4E252A200408C9009F5779 /* TestViewController.swift */,
 				FD3C932520156D4900E971F6 /* ViewController.swift */,
+				FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */,
 				FD4E252C200408C9009F5779 /* Main.storyboard */,
 				FD4E252F200408C9009F5779 /* Assets.xcassets */,
 				FD4E2531200408C9009F5779 /* LaunchScreen.storyboard */,
@@ -386,6 +389,7 @@
 				FD4E2529200408C9009F5779 /* AppDelegate.swift in Sources */,
 				FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */,
 				FDEDFCEB2006DE2C00AD2B71 /* Passable.swift in Sources */,
+				FDC70768201A95ED008674F9 /* ValidationErrorViewController.swift in Sources */,
 				FDEDFCDD2006AB5A00AD2B71 /* Person.swift in Sources */,
 				FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */,
 				FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */,

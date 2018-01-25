@@ -102,10 +102,10 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vce-dy-9os">
                                                         <rect key="frame" x="0.0" y="0.0" width="256" height="90"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S33-9D-AKd">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY/MM/DD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S33-9D-AKd">
                                                                 <rect key="frame" x="30" y="0.0" width="211" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -119,10 +119,10 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CN8-5s-SYt">
                                                         <rect key="frame" x="256" y="0.0" width="256" height="90"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-wk-GsC">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="###-###-###" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-wk-GsC">
                                                                 <rect key="frame" x="15" y="0.0" width="226" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -136,10 +136,10 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hxb-BM-Zxn">
                                                         <rect key="frame" x="512" y="0.0" width="256" height="90"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9z-JF-BNG">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="####" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9z-JF-BNG">
                                                                 <rect key="frame" x="15" y="0.0" width="211" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -219,7 +219,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5r-j3-fbH">
                                                                 <rect key="frame" x="30" y="0.0" width="339" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -236,7 +236,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGI-s0-GSs">
                                                                 <rect key="frame" x="15" y="0.0" width="339" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -298,7 +298,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfP-CE-28K">
                                                                 <rect key="frame" x="30" y="0.0" width="708" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -360,7 +360,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aq4-Ew-Ku3">
                                                                 <rect key="frame" x="30" y="0.0" width="708" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -444,7 +444,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gjb-VK-BMi">
                                                                 <rect key="frame" x="30" y="0.0" width="211" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -461,7 +461,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJI-sZ-xeZ">
                                                                 <rect key="frame" x="15" y="0.0" width="226" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -478,7 +478,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhw-bj-HG9">
                                                                 <rect key="frame" x="15" y="0.0" width="211" height="60"/>
                                                                 <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -517,6 +517,9 @@
                                                         <state key="normal" title="Generate Pass">
                                                             <color key="titleColor" red="0.93725490199999995" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="generatePass:" destination="KzS-OV-Nn7" eventType="touchUpInside" id="DX9-Jr-arX"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -536,6 +539,9 @@
                                                         <state key="normal" title="Populate Data">
                                                             <color key="titleColor" red="0.35294117650000001" green="0.58431372550000005" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="populate:" destination="KzS-OV-Nn7" eventType="touchUpInside" id="Uzq-gb-bz9"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -596,7 +602,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADB-pY-bbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="725"/>
+            <point key="canvasLocation" x="634" y="714"/>
+        </scene>
+        <!--Validation Error View Controller-->
+        <scene sceneID="mmm-fA-Wdv">
+            <objects>
+                <viewController storyboardIdentifier="validationErrorView" id="RPx-AC-jw0" customClass="ValidationErrorViewController" customModule="AmusementParkPassGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WQi-Hn-Jeh">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iN4-Qh-fvc">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eQG-qd-qKs">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="884"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioY-Fj-tYO">
+                                        <rect key="frame" x="0.0" y="884" width="768" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf5-GV-mVf">
+                                                <rect key="frame" x="50" y="20" width="668" height="80"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal" title="Populate Data">
+                                                    <color key="titleColor" red="0.35294117650000001" green="0.58431372550000005" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="populate:" destination="KzS-OV-Nn7" eventType="touchUpInside" id="uMq-Ab-f3O"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Tf5-GV-mVf" firstAttribute="leading" secondItem="ioY-Fj-tYO" secondAttribute="leading" constant="50" id="8Qt-A6-zBY"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tf5-GV-mVf" secondAttribute="bottom" constant="20" id="PYX-SJ-dlk"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tf5-GV-mVf" secondAttribute="trailing" constant="50" id="SdR-72-iGh"/>
+                                            <constraint firstItem="Tf5-GV-mVf" firstAttribute="top" secondItem="ioY-Fj-tYO" secondAttribute="top" constant="20" id="UUl-Sn-Zcm"/>
+                                            <constraint firstItem="Tf5-GV-mVf" firstAttribute="centerX" secondItem="ioY-Fj-tYO" secondAttribute="centerX" id="cDw-B3-G5N"/>
+                                            <constraint firstAttribute="height" constant="120" id="gSY-DL-RIh"/>
+                                            <constraint firstItem="Tf5-GV-mVf" firstAttribute="centerY" secondItem="ioY-Fj-tYO" secondAttribute="centerY" id="kJU-ce-it9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.78039215689999997" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iS6-mH-DzF" firstAttribute="bottom" secondItem="iN4-Qh-fvc" secondAttribute="bottom" id="7Es-J5-ZVu"/>
+                            <constraint firstItem="iN4-Qh-fvc" firstAttribute="leading" secondItem="iS6-mH-DzF" secondAttribute="leading" id="atd-Da-Mrh"/>
+                            <constraint firstItem="iN4-Qh-fvc" firstAttribute="top" secondItem="iS6-mH-DzF" secondAttribute="top" id="di1-xR-vUh"/>
+                            <constraint firstItem="iS6-mH-DzF" firstAttribute="trailing" secondItem="iN4-Qh-fvc" secondAttribute="trailing" id="hJp-qi-GmU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iS6-mH-DzF"/>
+                    </view>
+                    <connections>
+                        <outlet property="textErrorArea" destination="eQG-qd-qKs" id="Acy-B5-H9k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O51-wd-N5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="720"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="tne-QT-ifu">

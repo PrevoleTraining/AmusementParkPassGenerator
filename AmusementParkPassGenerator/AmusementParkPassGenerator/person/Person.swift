@@ -25,8 +25,8 @@ class Person: Personable {
     var birthDate: Date?
     var visitDate: Date?
     
-    var project: Any?
-    var vendor: Any?
+    var project: Project?
+    var vendor: Vendor?
     
     var pass: Passable
     
@@ -52,7 +52,7 @@ class Person: Personable {
      *  - zipCode: ZIP Code
      *  - birthDate: Birth date
      */
-    convenience init(pass: Passable, firstName: String, lastName: String, street: String, city: String, state: String, zipCode: String, birthDate: Date?) {
+    convenience init(pass: Passable, firstName: String, lastName: String, street: String, city: String, state: String, zipCode: String, birthDate: Date?, ssn: String?, managementTier: ManagementTier?, visitDate: Date?, project: Project?, vendor: Vendor?) {
         self.init(pass: pass)
         self.firstName = firstName
         self.lastName = lastName
@@ -61,5 +61,10 @@ class Person: Personable {
         self.state = state
         self.zipCode = zipCode
         self.birthDate = birthDate
+        self.ssn = ssn
+        self.managementTier = managementTier
+        self.visitDate = visitDate
+        self.project = project
+        self.vendor = vendor
     }
 }

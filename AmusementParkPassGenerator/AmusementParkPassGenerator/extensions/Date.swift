@@ -111,4 +111,14 @@ extension Date {
         formatter.dateFormat = "yyyy/MM/dd"
         return formatter.string(from: self)
     }
+    
+    static func parse(date: String?) -> Date? {
+        if let date = date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            return formatter.date(from: date)
+        } else {
+            return nil
+        }
+    }
 }

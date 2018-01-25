@@ -42,20 +42,20 @@ class ViewController: UIViewController {
     
     // MARK: - Attributes
     
-    lazy var labelFields: [PersonalInfo: LabelButton] = {
+    lazy var labelFields: [PersonalInfo: LabelAndField] = {
         return [
-            .birthDate: LabelButton(field: birthDateTextInput, label: birthDateLabel),
-            .birthDateJunior: LabelButton(field: birthDateTextInput, label: birthDateLabel),
-            .birthDateSenior: LabelButton(field: birthDateTextInput, label: birthDateLabel),
-            .ssn: LabelButton(field: ssnTextInput, label: ssnLabel),
-            .project: LabelButton(field: projectNumberTextInput, label: projectNumberLabel),
-            .firstName: LabelButton(field: firstNameTextInput, label: firstNameLabel),
-            .lastName: LabelButton(field: lastNameTextInput, label: lastNameLabel),
-            .vendor: LabelButton(field: companyTextInput, label: companyLabel),
-            .street: LabelButton(field: streetTextInput, label: streetLabel),
-            .city: LabelButton(field: cityTextInput, label: cityLabel),
-            .state: LabelButton(field: stateTextInput, label: stateLabel),
-            .zip: LabelButton(field: zipCodeTextInput, label: zipCodeLabel)
+            .birthDate: LabelAndField(field: birthDateTextInput, label: birthDateLabel),
+            .birthDateJunior: LabelAndField(field: birthDateTextInput, label: birthDateLabel),
+            .birthDateSenior: LabelAndField(field: birthDateTextInput, label: birthDateLabel),
+            .ssn: LabelAndField(field: ssnTextInput, label: ssnLabel),
+            .project: LabelAndField(field: projectNumberTextInput, label: projectNumberLabel),
+            .firstName: LabelAndField(field: firstNameTextInput, label: firstNameLabel),
+            .lastName: LabelAndField(field: lastNameTextInput, label: lastNameLabel),
+            .vendor: LabelAndField(field: companyTextInput, label: companyLabel),
+            .street: LabelAndField(field: streetTextInput, label: streetLabel),
+            .city: LabelAndField(field: cityTextInput, label: cityLabel),
+            .state: LabelAndField(field: stateTextInput, label: stateLabel),
+            .zip: LabelAndField(field: zipCodeTextInput, label: zipCodeLabel)
         ]
     }()
     
@@ -105,6 +105,10 @@ class ViewController: UIViewController {
             subCategoryButtonsStackView.addArrangedSubview(subCategoryButton.button)
         }
         
+        for (_, labelField) in labelFields {
+            setupBorder(labelField: labelField, color: ApplicationColor.fieldBorder.value, width: 2.0, cornerRadius: 5.0)
+        }
+        
         chooseCategory(initialCategoryButton.button)
     }
 
@@ -115,14 +119,8 @@ class ViewController: UIViewController {
     
     // MARK: - UI Logic
     func managePersonalInfo() {
-        var entrant: Entrantable?
+        var entrant: Entrantable? = findEntrant()
 
-        if let subCategoryButton = currentSubCategoryButton.currentButton {
-            entrant = dataProvider.findEntrantFor(category: subCategoryButton.category, subCategory: subCategoryButton.subCategory)
-        } else if let categoryButton = currentCategoryButton.currentButton {
-            entrant = dataProvider.findEntrantFor(category: categoryButton.category)
-        }
-        
         for (_, labelField) in labelFields {
             labelField.isEnabled = false
         }
@@ -162,8 +160,56 @@ class ViewController: UIViewController {
     }
     
     @objc func chooseSubCategory(_ sender: UIButton? = nil) {
+        resetErrors()
+        clearFields()
         currentSubCategoryButton.handle(button: sender)
         managePersonalInfo()
+    }
+    
+    @IBAction func generatePass(_ sender: UIButton) {
+        resetErrors()
+        
+        let entrant: Entrantable? = findEntrant()
+        
+        if let entrant = entrant, let accesses = entrant.accesses {
+            let person = Person(pass: Pass(accesses: accesses))
+            
+            person.firstName = firstNameTextInput.text
+            person.lastName = lastNameTextInput.text
+            person.street = streetTextInput.text
+            person.city = cityTextInput.text
+            person.state = stateTextInput.text
+            person.zipCode = zipCodeTextInput.text
+            person.birthDate = Date.parse(date: birthDateTextInput.text)
+            person.ssn = ssnTextInput.text
+            person.project = dataProvider.findProject(number: projectNumberTextInput.text)
+            person.vendor = dataProvider.findVendor(name: companyTextInput.text)
+            
+            if let personalInfo = entrant.personalInfo {
+                let errors = PersonalInfo.validate(person: person, personalInfo: personalInfo)
+                for (key, errorMessages) in errors {
+                    if let field = labelFields[key] {
+                        field.inError()
+                    }
+                    
+                    print(key)
+                    for message in errorMessages {
+                        print(message.description())
+                    }
+                }
+                
+                openPopup()
+            } else {
+                // TODO: Continue, no validation required
+                // TODO: Clear fields
+            }
+        } else {
+            // TODO: Do better error handling
+            fatalError("Should never happen: Entrant not found")
+        }
+    }
+    
+    @IBAction func populate(_ sender: UIButton) {
     }
     
     // MARK: - UI Builders
@@ -205,6 +251,50 @@ class ViewController: UIViewController {
         
         return button
     }
+    
+    func setupBorder(labelField: LabelAndField, color: UIColor, width: Double? = nil, cornerRadius: Double? = nil) {
+        labelField.field.layer.borderColor = color.cgColor
+
+        if let width = width {
+            labelField.field.layer.borderWidth = CGFloat(width)
+        }
+        
+        if let cornerRadius = cornerRadius {
+            labelField.field.layer.cornerRadius = CGFloat(cornerRadius)
+        }
+    }
+    
+    func resetErrors() {
+        for (_, field) in labelFields {
+            field.reset()
+        }
+    }
+    
+    func clearFields() {
+        for (_, field) in labelFields {
+            field.clear()
+        }
+    }
+    
+    func openPopup() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "validationErrorView") as! ValidationErrorViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    // MARK: - Helpers
+    
+    func findEntrant() -> Entrantable? {
+        if let subCategoryButton = currentSubCategoryButton.currentButton {
+            return dataProvider.findEntrantFor(category: subCategoryButton.category, subCategory: subCategoryButton.subCategory)
+        } else if let categoryButton = currentCategoryButton.currentButton {
+            return dataProvider.findEntrantFor(category: categoryButton.category)
+        } else {
+            return nil
+        }
+    }
 }
 
 protocol Buttonable {
@@ -222,7 +312,7 @@ struct SubCategoryButton: Buttonable {
     var button: UIButton
 }
 
-class LabelButton {
+class LabelAndField {
     var field: UITextField
     var label: UILabel
     
@@ -230,12 +320,30 @@ class LabelButton {
         didSet {
             field.isEnabled = isEnabled
             label.isEnabled = isEnabled
+            
+            field.backgroundColor = (field.isEnabled ? ApplicationColor.fieldBackground : ApplicationColor.fieldBackgroundDisabled).value
         }
     }
     
     init(field: UITextField, label: UILabel) {
         self.field = field
         self.label = label
+    }
+    
+    func clear() {
+        field.text = nil
+    }
+    
+    func inError() {
+        field.layer.borderColor = ApplicationColor.fieldBorderError.value.cgColor
+        field.textColor = ApplicationColor.fieldTextError.value
+        label.textColor = ApplicationColor.labelError.value
+    }
+    
+    func reset() {
+        field.layer.borderColor = ApplicationColor.fieldBorder.value.cgColor
+        field.textColor = ApplicationColor.fieldText.value
+        label.textColor = ApplicationColor.label.value
     }
 }
 

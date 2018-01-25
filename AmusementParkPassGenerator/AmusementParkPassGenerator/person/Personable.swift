@@ -22,8 +22,8 @@ protocol Personable: CustomStringConvertible {
     var ssn: String? { get set }
     var managementTier: ManagementTier? { get set }
     
-    var project: Any? { get set }
-    var vendor: Any? { get set }
+    var project: Project? { get set }
+    var vendor: Vendor? { get set }
     
     var birthDate: Date? { get set }
     var visitDate: Date? { get set }

@@ -15,6 +15,14 @@ enum ApplicationColor {
     case subCategoryButtonText
     case subCategoryButton
     case subCategoryHighlight
+    case fieldText
+    case fieldTextError
+    case fieldBorder
+    case fieldBorderError
+    case fieldBackground
+    case fieldBackgroundDisabled
+    case labelError
+    case label
     
     var value: UIColor {
         switch self {
@@ -24,6 +32,12 @@ enum ApplicationColor {
         case .subCategoryButtonText: return UIColor(red: 135.0/255.0, green: 126.0/255.0, blue: 144.0/255.0, alpha: 1.0)
         case .subCategoryButton: return UIColor(red: 63.0/255.0, green: 54.0/255.0, blue: 71.0/255.0, alpha: 1.0)
         case .subCategoryHighlight: return UIColor.white
+        case .fieldText: return UIColor.black
+        case .fieldBorder: return UIColor(red: 197.0/255.0, green: 192.0/255.0, blue: 200.0/255.0, alpha: 1.0)
+        case .fieldBorderError, .labelError, .fieldTextError: return UIColor(red: 220.0/255.0, green: 89.0/255.0, blue: 96.0/255.0, alpha: 1.0)
+        case .fieldBackground: return UIColor.white
+        case .fieldBackgroundDisabled: return UIColor(red: 226/255.0, green: 222.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+        case .label: return UIColor(red: 95.0/255.0, green: 93.0/255.0, blue: 97.0/255.0, alpha: 1.0)
         }
     }
 }

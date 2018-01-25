@@ -328,11 +328,17 @@ extension PersonalInfo {
         var errors: [PersonalInfo: [PersonalInfoError]] = [:]
         
         for info in personalInfo {
-            errors[info] = []
+            var currentErrors: [PersonalInfoError] = []
+            
             for validator in info.validators(person: person) {
-                if let error = validator() {
-                    errors[info]?.append(error)
+                let error = validator()
+                if let error = error {
+                    currentErrors.append(error)
                 }
+            }
+            
+            if !currentErrors.isEmpty {
+                errors[info] = currentErrors
             }
         }
         
