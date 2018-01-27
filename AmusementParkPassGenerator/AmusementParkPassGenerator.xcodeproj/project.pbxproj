@@ -25,6 +25,9 @@
 		FDC7075E20163929008674F9 /* ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075D20163929008674F9 /* ApplicationColor.swift */; };
 		FDC707642017D69B008674F9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC707632017D69B008674F9 /* DataProvider.swift */; };
 		FDC70768201A95ED008674F9 /* ValidationErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */; };
+		FDC7076A201BCA78008674F9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70769201BCA78008674F9 /* UITextField.swift */; };
+		FDC7076C201BDAFD008674F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076B201BDAFD008674F9 /* UIButton.swift */; };
+		FDC7076E201C5B59008674F9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076D201C5B59008674F9 /* UITextView.swift */; };
 		FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */; };
 		FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */; };
 		FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC120054F1900AD2B71 /* Accessable.swift */; };
@@ -86,6 +89,9 @@
 		FDC7075D20163929008674F9 /* ApplicationColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationColor.swift; sourceTree = "<group>"; };
 		FDC707632017D69B008674F9 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorViewController.swift; sourceTree = "<group>"; };
+		FDC70769201BCA78008674F9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		FDC7076B201BDAFD008674F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		FDC7076D201C5B59008674F9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrantable.swift; sourceTree = "<group>"; };
 		FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
 		FDEDFCC120054F1900AD2B71 /* Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessable.swift; sourceTree = "<group>"; };
@@ -188,6 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				FDC7075D20163929008674F9 /* ApplicationColor.swift */,
+				FDC70769201BCA78008674F9 /* UITextField.swift */,
+				FDC7076B201BDAFD008674F9 /* UIButton.swift */,
+				FDC7076D201C5B59008674F9 /* UITextView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -394,8 +403,10 @@
 				FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */,
 				FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */,
 				FDEDFCC9200555CB00AD2B71 /* Entrant.swift in Sources */,
+				FDC7076C201BDAFD008674F9 /* UIButton.swift in Sources */,
 				FDC70755201624B0008674F9 /* Identifiable.swift in Sources */,
 				FDEDFCCD2005572500AD2B71 /* DiscountAccess.swift in Sources */,
+				FDC7076E201C5B59008674F9 /* UITextView.swift in Sources */,
 				FDEDFCEE2006E3B400AD2B71 /* Checkpointable.swift in Sources */,
 				FDEDFCDF2006ADB400AD2B71 /* Personable.swift in Sources */,
 				FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */,
@@ -409,6 +420,7 @@
 				FDEDFCE12006ADE100AD2B71 /* PersonalInfo.swift in Sources */,
 				FDC7075320162450008674F9 /* AreaRestrictedEntrant.swift in Sources */,
 				FDEDFCF82007F32200AD2B71 /* SwipeResult.swift in Sources */,
+				FDC7076A201BCA78008674F9 /* UITextField.swift in Sources */,
 				FDEDFCF02006E3DE00AD2B71 /* AreaCheckpoint.swift in Sources */,
 				FDC7075E20163929008674F9 /* ApplicationColor.swift in Sources */,
 				FDEDFCD22005780A00AD2B71 /* PListConverterError.swift in Sources */,

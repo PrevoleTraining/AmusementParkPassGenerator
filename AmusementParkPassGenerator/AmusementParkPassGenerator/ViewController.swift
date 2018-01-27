@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var cityTextInput: UITextField!
     @IBOutlet weak var stateTextInput: UITextField!
     @IBOutlet weak var zipCodeTextInput: UITextField!
+    @IBOutlet weak var managementTierTextInput: UITextField!
+    @IBOutlet weak var visitDateTextInput: UITextField!
     
     // MARK: - Labels
     
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var zipCodeLabel: UILabel!
+    @IBOutlet weak var managementTierLabel: UILabel!
+    @IBOutlet weak var visitDateLabel: UILabel!
     
     // MARK: - Attributes
     
@@ -55,7 +59,9 @@ class ViewController: UIViewController {
             .street: LabelAndField(field: streetTextInput, label: streetLabel),
             .city: LabelAndField(field: cityTextInput, label: cityLabel),
             .state: LabelAndField(field: stateTextInput, label: stateLabel),
-            .zip: LabelAndField(field: zipCodeTextInput, label: zipCodeLabel)
+            .zip: LabelAndField(field: zipCodeTextInput, label: zipCodeLabel),
+            .managementTier: LabelAndField(field: managementTierTextInput, label: managementTierLabel),
+            .visitDate: LabelAndField(field: visitDateTextInput, label: visitDateLabel)
         ]
     }()
     
@@ -106,7 +112,8 @@ class ViewController: UIViewController {
         }
         
         for (_, labelField) in labelFields {
-            setupBorder(labelField: labelField, color: ApplicationColor.fieldBorder.value, width: 2.0, cornerRadius: 5.0)
+            labelField.field.border(color: ApplicationColor.fieldBorder.value, width: 2.0, cornerRadius: 5.0)
+            labelField.field.padding(width: 10.0)
         }
         
         chooseCategory(initialCategoryButton.button)
@@ -119,7 +126,7 @@ class ViewController: UIViewController {
     
     // MARK: - UI Logic
     func managePersonalInfo() {
-        var entrant: Entrantable? = findEntrant()
+        let entrant: Entrantable? = findEntrant()
 
         for (_, labelField) in labelFields {
             labelField.isEnabled = false
@@ -186,26 +193,13 @@ class ViewController: UIViewController {
             person.vendor = dataProvider.findVendor(name: companyTextInput.text)
             
             if let personalInfo = entrant.personalInfo {
-                let errors = PersonalInfo.validate(person: person, personalInfo: personalInfo)
-                for (key, errorMessages) in errors {
-                    if let field = labelFields[key] {
-                        field.inError()
-                    }
-                    
-                    print(key)
-                    for message in errorMessages {
-                        print(message.description())
-                    }
-                }
-                
-                openPopup()
+                validate(person: person, personalInfo: personalInfo)
             } else {
                 // TODO: Continue, no validation required
                 // TODO: Clear fields
             }
         } else {
-            // TODO: Do better error handling
-            fatalError("Should never happen: Entrant not found")
+            openPopup(message: "Unknown error, ask your App's Developer")
         }
     }
     
@@ -216,9 +210,10 @@ class ViewController: UIViewController {
     
     func createCategoryButtons(for categories: [EntrantCategory]) -> [CategoryButton] {
         return categories.map {
-            return CategoryButton(category: $0, button: createUIButton(
+            return CategoryButton(category: $0, button: UIButton(
                 text: $0.description(),
                 selector: #selector(self.chooseCategory),
+                target: self,
                 backgroundColor: ApplicationColor.categoryButton.value,
                 titleColor: ApplicationColor.categoryButtonText.value
             ))
@@ -227,40 +222,13 @@ class ViewController: UIViewController {
     
     func createSubCategoryButtons(for subCategories: [EntrantSubCategory]) -> [SubCategoryButton] {
         return subCategories.map {
-            return SubCategoryButton(category: $0.category(), subCategory: $0, button: createUIButton(
+            return SubCategoryButton(category: $0.category(), subCategory: $0, button: UIButton(
                 text: $0.description(),
                 selector: #selector(self.chooseSubCategory),
+                target: self,
                 backgroundColor: ApplicationColor.subCategoryButton.value,
                 titleColor: ApplicationColor.subCategoryButtonText.value
             ))
-        }
-    }
-    
-    func createUIButton(text: String?, selector: Selector?, backgroundColor: UIColor, titleColor: UIColor) -> UIButton {
-        let button = UIButton()
-        button.backgroundColor = backgroundColor
-        button.setTitleColor(titleColor, for: .normal)
-        
-        if let text = text {
-            button.setTitle(text, for: .normal)
-        }
-        
-        if let selector = selector {
-            button.addTarget(self, action: selector, for: .touchUpInside)
-        }
-        
-        return button
-    }
-    
-    func setupBorder(labelField: LabelAndField, color: UIColor, width: Double? = nil, cornerRadius: Double? = nil) {
-        labelField.field.layer.borderColor = color.cgColor
-
-        if let width = width {
-            labelField.field.layer.borderWidth = CGFloat(width)
-        }
-        
-        if let cornerRadius = cornerRadius {
-            labelField.field.layer.cornerRadius = CGFloat(cornerRadius)
         }
     }
     
@@ -275,13 +243,32 @@ class ViewController: UIViewController {
             field.clear()
         }
     }
-    
-    func openPopup() {
+
+    func validate(person: Personable, personalInfo: [PersonalInfo]) {
+        let errors = PersonalInfo.validate(person: person, personalInfo: personalInfo)
+        
+        if !errors.isEmpty {
+            errors.forEach { (key: PersonalInfo, value: [PersonalInfoError]) in
+                if let field = labelFields[key] {
+                    field.inError()
+                }
+            }
+
+            openPopup(errors: errors)
+        }
+    }
+
+    func openPopup(errors: [PersonalInfo: [PersonalInfoError]]? = nil, message: String? = nil) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "validationErrorView") as! ValidationErrorViewController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true, completion: nil)
+        let popup = storyboard.instantiateViewController(withIdentifier: "validationErrorView") as! ValidationErrorViewController
+        
+        popup.modalPresentationStyle = .overFullScreen
+        popup.modalTransitionStyle = .crossDissolve
+
+        popup.errors = errors
+        popup.message = message
+        
+        self.present(popup, animated: true, completion: nil)
     }
     
     // MARK: - Helpers
@@ -335,13 +322,13 @@ class LabelAndField {
     }
     
     func inError() {
-        field.layer.borderColor = ApplicationColor.fieldBorderError.value.cgColor
+        field.border(color: ApplicationColor.fieldBorderError.value)
         field.textColor = ApplicationColor.fieldTextError.value
         label.textColor = ApplicationColor.labelError.value
     }
     
     func reset() {
-        field.layer.borderColor = ApplicationColor.fieldBorder.value.cgColor
+        field.border(color: ApplicationColor.fieldBorder.value)
         field.textColor = ApplicationColor.fieldText.value
         label.textColor = ApplicationColor.label.value
     }

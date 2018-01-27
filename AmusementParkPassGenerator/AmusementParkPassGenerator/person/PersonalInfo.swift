@@ -279,7 +279,7 @@ func stringValidatorFactory(with str: String?, min: Int, max: Int) -> [() -> Per
 /**
  * Personal info validation errors
  */
-enum PersonalInfoError: Error, Descriptable {
+enum PersonalInfoError: Error, Descriptable, Equatable {
     case blankError
     case lengthError(min: Int, max: Int)
     case zipCodeError
@@ -310,6 +310,23 @@ enum PersonalInfoError: Error, Descriptable {
         case .invalidSeniorBirthDate: return "The birth date must be older than \(seniorAgeThreshold - 1) years old"
         case .invalidBirthDate: return "The birth date must be in a reasonable range: \(minAcceptableAge) to \(maxAcceptableAge) years old (park safety)"
         case .invalidVisitDate: return "The date must be in the future"
+        }
+    }
+    
+    static func ==(lhs: PersonalInfoError, rhs: PersonalInfoError) -> Bool {
+        switch (lhs, rhs) {
+        case (.blankError, .blankError),
+             (.lengthError, .lengthError),
+             (.zipCodeError, .zipCodeError),
+             (.ssnError, .ssnError),
+             (.managementTierError, .managementTierError),
+             (.projectError, .projectError),
+             (.vendorError, .vendorError),
+             (.invalidSeniorBirthDate, .invalidSeniorBirthDate),
+             (.invalidJuniorBirthDate, .invalidJuniorBirthDate),
+             (.invalidBirthDate, .invalidBirthDate),
+             (.invalidVisitDate, .invalidVisitDate): return true
+        default: return false
         }
     }
 }
