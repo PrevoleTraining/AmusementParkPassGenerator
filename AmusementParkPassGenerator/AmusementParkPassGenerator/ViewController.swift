@@ -198,10 +198,13 @@ class ViewController: UIViewController {
             }
             
             if let personalInfo = entrant.personalInfo {
-                validate(person: person, personalInfo: personalInfo)
+                handleValidationErrors(person: person, personalInfo: personalInfo)
             } else {
-                // TODO: Continue, no validation required
-                // TODO: Clear fields
+                for (_, field) in labelFields {
+                    field.clear()
+                }
+                
+                performSegue(withIdentifier: "showPassTester", sender: nil)
             }
         } else {
             openPopup(message: "Unknown error, ask your App's Developer")
@@ -223,9 +226,6 @@ class ViewController: UIViewController {
             visitDateTextInput.text = samplePerson.visitDate
             managementTierTextInput.text = samplePerson.managementTier
         }
-        
-        
-
     }
     
     // MARK: - UI Builders
@@ -266,7 +266,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func validate(person: Personable, personalInfo: [PersonalInfo]) {
+    func handleValidationErrors(person: Personable, personalInfo: [PersonalInfo]) {
         let errors = PersonalInfo.validate(person: person, personalInfo: personalInfo)
         
         if !errors.isEmpty {
@@ -277,6 +277,8 @@ class ViewController: UIViewController {
             }
 
             openPopup(errors: errors)
+        } else {
+            performSegue(withIdentifier: "showPassTester", sender: nil)
         }
     }
 

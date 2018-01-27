@@ -303,7 +303,7 @@ enum PersonalInfoError: Error, Descriptable, Equatable {
             }
         case .zipCodeError: return "The ZIP code must contain 5 digits"
         case .ssnError: return "The Social Security Number must follow the format 123-123-123 (each group of digits between 100 and 999)"
-        case .managementTierError: return "The management tier must be present"
+        case .managementTierError: return "The management tier must be present or is not valid"
         case .vendorError: return "The vendor must be present"
         case .projectError: return "The project must be present"
         case .invalidJuniorBirthDate: return "The birth date must be younger than \(juniorAgeThreshold + 1) years old"
