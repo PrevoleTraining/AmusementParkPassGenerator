@@ -26,18 +26,10 @@ class EntrantableUnarchiver {
         var entrants: [Entrantable] = []
         
         for (index, raw) in array.enumerated() {
-            if let itemDictionary = raw as? [String: Any],
-                let rawCategory = itemDictionary["category"] as? String,
-                let category = EntrantCategory(rawValue: rawCategory) {
+            if let itemDictionary = raw as? [String: Any] {
                 
-                var entrant: Entrant
-                
-                if let rawSubCategory = itemDictionary["subCategory"] as? String,
-                    let subCategory = EntrantSubCategory(rawValue: rawSubCategory) {
-                    entrant = Entrant(category: category, subCategory: subCategory)
-                } else {
-                    entrant = Entrant(category: category)
-                }
+                let categoryAndSubCategory = unarchiveCategeryAndSubCategory(itemDictionary: itemDictionary)
+                let entrant = Entrant(categoryAndSubCategory: categoryAndSubCategory)
                 
                 var accesses: [Accessable] = []
                 
@@ -131,6 +123,21 @@ class EntrantableUnarchiver {
         }
         
         return personalInfo
+    }
+    
+    static func unarchiveCategeryAndSubCategory(itemDictionary: [String: Any]) -> CategoryAndSubCategory {
+        if let rawCategory = itemDictionary["category"] as? String,
+            let category = EntrantCategory(rawValue: rawCategory) {
+            
+            if let rawSubCategory = itemDictionary["subCategory"] as? String,
+                let subCategory = EntrantSubCategory(rawValue: rawSubCategory) {
+                return (category: category, subCategory: subCategory)
+            } else {
+                return (category: category, subCategory: nil)
+            }
+        } else {
+            fatalError("The population does not contain a valid category")
+        }
     }
 }
 

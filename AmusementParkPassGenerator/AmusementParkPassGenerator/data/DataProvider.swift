@@ -10,6 +10,7 @@ class DataProvider {
     var entrants: [Entrantable]?
     var projects: [Project]
     var vendors: [Vendor]
+    var population: PopulationInfoCollection
     
     lazy var categories: [EntrantCategory] = {
         var categories: [EntrantCategory] = []
@@ -53,6 +54,9 @@ class DataProvider {
             
             array = try PlistConverter.array(fromFile: "vendors", ofType: "plist")
             vendors = try AreaRestrictedEntrantUnarchiver.vendors(fromArray: array)
+            
+            array = try PlistConverter.array(fromFile: "population", ofType: "plist")
+            population = try PopulationInfoUnarchiver.population(fromArray: array)
         } catch let error {
             fatalError("\(error)")
         }

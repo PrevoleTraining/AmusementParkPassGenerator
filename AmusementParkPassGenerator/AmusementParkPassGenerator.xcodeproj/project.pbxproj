@@ -28,6 +28,11 @@
 		FDC7076A201BCA78008674F9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70769201BCA78008674F9 /* UITextField.swift */; };
 		FDC7076C201BDAFD008674F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076B201BDAFD008674F9 /* UIButton.swift */; };
 		FDC7076E201C5B59008674F9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076D201C5B59008674F9 /* UITextView.swift */; };
+		FDC70770201C8093008674F9 /* PopulationUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076F201C8093008674F9 /* PopulationUnarchiver.swift */; };
+		FDC70772201C80A5008674F9 /* PopulationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70771201C80A5008674F9 /* PopulationInfo.swift */; };
+		FDC70774201CCAB0008674F9 /* PersonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70773201CCAB0008674F9 /* PersonBase.swift */; };
+		FDC70776201CCB8A008674F9 /* PopulationInfoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70775201CCB8A008674F9 /* PopulationInfoCollection.swift */; };
+		FDC70778201CE080008674F9 /* population.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDC70777201CE080008674F9 /* population.plist */; };
 		FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */; };
 		FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */; };
 		FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC120054F1900AD2B71 /* Accessable.swift */; };
@@ -92,6 +97,11 @@
 		FDC70769201BCA78008674F9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		FDC7076B201BDAFD008674F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		FDC7076D201C5B59008674F9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		FDC7076F201C8093008674F9 /* PopulationUnarchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationUnarchiver.swift; sourceTree = "<group>"; };
+		FDC70771201C80A5008674F9 /* PopulationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationInfo.swift; sourceTree = "<group>"; };
+		FDC70773201CCAB0008674F9 /* PersonBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBase.swift; sourceTree = "<group>"; };
+		FDC70775201CCB8A008674F9 /* PopulationInfoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationInfoCollection.swift; sourceTree = "<group>"; };
+		FDC70777201CE080008674F9 /* population.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = population.plist; sourceTree = "<group>"; };
 		FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrantable.swift; sourceTree = "<group>"; };
 		FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
 		FDEDFCC120054F1900AD2B71 /* Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessable.swift; sourceTree = "<group>"; };
@@ -229,6 +239,7 @@
 		FDEDFCCE2005778100AD2B71 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				FDC70777201CE080008674F9 /* population.plist */,
 				FD3C93282015CBF200E971F6 /* projects.plist */,
 				FD3C93272015CBF200E971F6 /* vendors.plist */,
 				FDEDFCD920057D5400AD2B71 /* entrants.plist */,
@@ -236,7 +247,10 @@
 				FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */,
 				FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */,
 				FDC707502016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift */,
+				FDC7076F201C8093008674F9 /* PopulationUnarchiver.swift */,
 				FDC707632017D69B008674F9 /* DataProvider.swift */,
+				FDC70771201C80A5008674F9 /* PopulationInfo.swift */,
+				FDC70775201CCB8A008674F9 /* PopulationInfoCollection.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -248,6 +262,7 @@
 				FDEDFCDE2006ADB400AD2B71 /* Personable.swift */,
 				FDEDFCE02006ADE100AD2B71 /* PersonalInfo.swift */,
 				FD3C932B2015FF0E00E971F6 /* ManagementTier.swift */,
+				FDC70773201CCAB0008674F9 /* PersonBase.swift */,
 			);
 			path = person;
 			sourceTree = "<group>";
@@ -367,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD4E2533200408C9009F5779 /* LaunchScreen.storyboard in Resources */,
+				FDC70778201CE080008674F9 /* population.plist in Resources */,
 				FD3C93292015CBF200E971F6 /* vendors.plist in Resources */,
 				FD4E2530200408C9009F5779 /* Assets.xcassets in Resources */,
 				FD4E252E200408C9009F5779 /* Main.storyboard in Resources */,
@@ -389,9 +405,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC70772201C80A5008674F9 /* PopulationInfo.swift in Sources */,
 				FDC707512016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift in Sources */,
 				FDEDFCF22006E5DC00AD2B71 /* Checkpoint.swift in Sources */,
 				FDEDFCC72005539B00AD2B71 /* EntrantSubCategory.swift in Sources */,
+				FDC70776201CCB8A008674F9 /* PopulationInfoCollection.swift in Sources */,
 				FDEDFCF62006E69700AD2B71 /* DiscountCheckpoint.swift in Sources */,
 				FD4E252B200408C9009F5779 /* TestViewController.swift in Sources */,
 				FDEDFCF42006E67400AD2B71 /* RideCheckpoint.swift in Sources */,
@@ -402,6 +420,7 @@
 				FDEDFCDD2006AB5A00AD2B71 /* Person.swift in Sources */,
 				FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */,
 				FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */,
+				FDC70774201CCAB0008674F9 /* PersonBase.swift in Sources */,
 				FDEDFCC9200555CB00AD2B71 /* Entrant.swift in Sources */,
 				FDC7076C201BDAFD008674F9 /* UIButton.swift in Sources */,
 				FDC70755201624B0008674F9 /* Identifiable.swift in Sources */,
@@ -411,6 +430,7 @@
 				FDEDFCDF2006ADB400AD2B71 /* Personable.swift in Sources */,
 				FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */,
 				FDC7075720162584008674F9 /* Vendor.swift in Sources */,
+				FDC70770201C8093008674F9 /* PopulationUnarchiver.swift in Sources */,
 				FDEDFCD42005784600AD2B71 /* EntrantableUnarchiver.swift in Sources */,
 				FDEDFCE62006AF2900AD2B71 /* String.swift in Sources */,
 				FD3C932620156D4900E971F6 /* ViewController.swift in Sources */,

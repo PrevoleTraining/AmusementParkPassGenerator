@@ -26,7 +26,7 @@ class AreaRestrictedEntrantUnarchiver {
         
         for (index, raw) in array.enumerated() {
             if let itemDictionary = raw as? [String: Any],
-                let name = itemDictionary["name"] as? String {
+                let name = itemDictionary["vendor"] as? String {
                 
                 let vendor = Vendor(name: name)
                 vendor.accesses = extractAccesses(from: itemDictionary)

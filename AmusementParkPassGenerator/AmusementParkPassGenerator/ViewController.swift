@@ -191,6 +191,11 @@ class ViewController: UIViewController {
             person.ssn = ssnTextInput.text
             person.project = dataProvider.findProject(number: projectNumberTextInput.text)
             person.vendor = dataProvider.findVendor(name: companyTextInput.text)
+            person.visitDate = Date.parse(date: visitDateTextInput.text)
+            
+            if let managementTier = managementTierTextInput.text {
+                person.managementTier = ManagementTier(rawValue: managementTier)
+            }
             
             if let personalInfo = entrant.personalInfo {
                 validate(person: person, personalInfo: personalInfo)
@@ -204,6 +209,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func populate(_ sender: UIButton) {
+        if let samplePerson = findSamplePerson() {
+            firstNameTextInput.text = samplePerson.firstName
+            lastNameTextInput.text = samplePerson.lastName
+            streetTextInput.text = samplePerson.street
+            cityTextInput.text = samplePerson.city
+            stateTextInput.text = samplePerson.state
+            zipCodeTextInput.text = samplePerson.zipCode
+            birthDateTextInput.text = samplePerson.birthDate
+            ssnTextInput.text = samplePerson.ssn
+            projectNumberTextInput.text = samplePerson.project
+            companyTextInput.text = samplePerson.vendor
+            visitDateTextInput.text = samplePerson.visitDate
+            managementTierTextInput.text = samplePerson.managementTier
+        }
+        
+        
+
     }
     
     // MARK: - UI Builders
@@ -278,6 +300,16 @@ class ViewController: UIViewController {
             return dataProvider.findEntrantFor(category: subCategoryButton.category, subCategory: subCategoryButton.subCategory)
         } else if let categoryButton = currentCategoryButton.currentButton {
             return dataProvider.findEntrantFor(category: categoryButton.category)
+        } else {
+            return nil
+        }
+    }
+
+    func findSamplePerson() -> PopulationInfo? {
+        if let subCategoryButton = currentSubCategoryButton.currentButton {
+            return dataProvider.population.findBy(category: subCategoryButton.category, subCategory: subCategoryButton.subCategory)
+        } else if let categoryButton = currentCategoryButton.currentButton {
+            return dataProvider.population.findBy(category: categoryButton.category)
         } else {
             return nil
         }

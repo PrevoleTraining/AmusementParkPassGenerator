@@ -11,23 +11,15 @@ import Foundation
 /**
  * Implementation of Personable
  */
-class Person: Personable {
-    var firstName: String?
-    var lastName: String?
-    var street: String?
-    var city: String?
-    var state: String?
-    var zipCode: String?
-    var ssn: String?
-
+class Person: PersonBase, Personable {
     var managementTier: ManagementTier?
-
+    
     var birthDate: Date?
     var visitDate: Date?
     
     var project: Project?
     var vendor: Vendor?
-    
+
     var pass: Passable
     
     /**

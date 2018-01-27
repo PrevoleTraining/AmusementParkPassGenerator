@@ -23,7 +23,7 @@ class Entrant: Entrantable {
      *  - category: The category
      *  - subCategory: The sub category
      */
-    init(category: EntrantCategory, subCategory: EntrantSubCategory) {
+    init(category: EntrantCategory, subCategory: EntrantSubCategory? = nil) {
         self.category = category
         self.subCategory = subCategory
     }
@@ -31,13 +31,15 @@ class Entrant: Entrantable {
     /**
      * Constructor
      *
-     * - parameter category: The category
+     * - parameter categoryAndSubCategory: The category and subCategory tuple
      */
-    init(category: EntrantCategory) {
-        self.category = category
+    convenience init(categoryAndSubCategory: CategoryAndSubCategory) {
+        self.init(category: categoryAndSubCategory.category, subCategory: categoryAndSubCategory.subCategory)
     }
     
     func description() -> String {
         return "Category: \(category.rawValue), subCategory: \(subCategory?.rawValue ?? "n/a")"
     }
 }
+
+typealias CategoryAndSubCategory = (category: EntrantCategory, subCategory: EntrantSubCategory?)
