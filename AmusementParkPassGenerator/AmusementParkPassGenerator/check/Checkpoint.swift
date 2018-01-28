@@ -11,13 +11,15 @@
  */
 class Checkpoint<A: Accessable>: Checkpointable {
     var access: A
+    var name: String
     
     /**
      * Create the checkpoint
      *
      * - parameter access: The access to check
      */
-    init(access: A) {
+    init(name: String, access: A) {
+        self.name = name
         self.access = access
     }
     

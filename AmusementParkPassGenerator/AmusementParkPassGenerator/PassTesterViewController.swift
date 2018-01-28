@@ -24,6 +24,8 @@ class PassTesterViewController: UIViewController {
     
     @IBOutlet weak var accessResultsTextArea: UITextView!
     
+    let simulator: CheckpointSimulator = CheckpointSimulator()
+    
     var person: Personable?
     var pass: Pass?
     
@@ -43,10 +45,27 @@ class PassTesterViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func checkAreaAccesses(_ sender: Any) {
+        if let person = person {
+            showSwipeResults(results: simulator.testAreaCheckpoints(pass: person.pass))
+        }
+    }
+    
+    @IBAction func checkRideAccesses(_ sender: Any) {
+        if let person = person {
+            showSwipeResults(results: simulator.testRideCheckpoints(pass: person.pass))
+        }
+    }
+    
+    @IBAction func checkDiscountAccesses(_ sender: Any) {
+        if let person = person {
+            showSwipeResults(results: simulator.testDiscountCheckpoints(pass: person.pass))
+        }
+    }
+    
     // MARK: - UI Helpers
     
     func setup() {
-        accessResultsTextArea.centerVertically()
         accessResultsTextArea.addFullInnerShadow()
         descriptionHoleView.addTopInnerShadow()
     }
@@ -71,5 +90,25 @@ class PassTesterViewController: UIViewController {
                 return memo + "• \(access.description())\n"
             })
         }
+    }
+    
+    func showSwipeResults(results: [String: SwipeResult]) {
+        let attributedString: NSMutableAttributedString = NSMutableAttributedString()
+
+        for (name, result) in results {
+            var color: UIColor
+            
+            switch result.status {
+            case .granted, .grantedForDiscount: color = ApplicationColor.simulatorGreenText.value
+            case .denied: color = ApplicationColor.simulatorRedText.value
+            }
+
+            let nameAttribues: [NSAttributedStringKey: Any] = [.font: UIFont.boldSystemFont(ofSize: 18), .foregroundColor: color]
+            let messagesAttributes: [NSAttributedStringKey: Any] = [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: color]
+            attributedString.append(NSMutableAttributedString(string: name, attributes: nameAttribues))
+            attributedString.append(NSMutableAttributedString(string: ": \(result.description)\n", attributes: messagesAttributes))
+        }
+
+        accessResultsTextArea.attributedText = attributedString
     }
 }

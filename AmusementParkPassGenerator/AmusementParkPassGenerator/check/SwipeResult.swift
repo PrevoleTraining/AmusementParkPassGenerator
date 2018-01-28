@@ -13,13 +13,25 @@
 struct SwipeResult: CustomStringConvertible {
     var status: Status
     var messages: [String] = []
+    var birthDateMessage: Bool = false
+    var tooFast: Bool = false
     
     var description: String {
+        var message: String
+        
         switch status {
-        case .granted: return "Access authorized"
-        case .grantedForDiscount(let discount): return "Access authorized for discount: \(discount.description())"
-        case .denied: return "Access denied"
+        case .granted: message = "Access authorized"
+        case .grantedForDiscount(let discount): message = "Access authorized for discount: \(discount.description())"
+        case .denied: message = "Access denied"
         }
+        
+        if birthDateMessage && !message.contains("denied") {
+            message += ", Happy Birthday! Enjoy the day in our Theme Park"
+        } else if tooFast {
+            message += ", You attemtped to cheat at the access control!"
+        }
+        
+        return message
     }
 
     /**
@@ -36,10 +48,12 @@ struct SwipeResult: CustomStringConvertible {
      *
      * - parameter status: The status of the check
      * - parameter message: Short message to associate with status
+     * - parameter message: Attempt to check access too fast
      */
-    init(status: Status, message: String) {
+    init(status: Status, message: String, tooFast: Bool = false) {
         self.init(status: status)
         self.messages.append(message)
+        self.tooFast = tooFast
     }
     
     /**

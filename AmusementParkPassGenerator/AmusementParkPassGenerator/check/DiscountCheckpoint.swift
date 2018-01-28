@@ -10,10 +10,11 @@ class DiscountCheckpoint: Checkpoint<DiscountAccess> {
     /**
      * Create an discount checkpoint with an discount access
      *
+     * - parameter name: Checkpoint name
      * - parameter access: The discount access of the terminal
      */
-   override init(access: DiscountAccess) {
-        super.init(access: access)
+    override init(name: String, access: DiscountAccess) {
+        super.init(name: name, access: access)
     }
     
     override func swipe(pass: Passable) -> SwipeResult {

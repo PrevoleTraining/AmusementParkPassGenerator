@@ -53,6 +53,20 @@ extension Date {
     }
     
     /**
+     * Check if a birth date is today.
+     *
+     * - parameter date: The birth date to compare with today date
+     *
+     * - returns: True if the birth date day and month are today
+     */
+    func isBirthDate(date: Date) -> Bool {
+        let lhs = DayMonthYear.create(from: self)
+        let rhs = DayMonthYear.create(from: date)
+        
+        return lhs.day == rhs.day && lhs.month == rhs.month
+    }
+
+    /**
      * Check if a two dates have a difference less than five years.
      *
      * - parameter date: The date to compare with
@@ -116,7 +130,9 @@ extension Date {
         if let date = date {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
-            return formatter.date(from: date)
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            let parsedDate = formatter.date(from: date)
+            return parsedDate
         } else {
             return nil
         }

@@ -14,7 +14,11 @@ import Foundation
 class Person: PersonBase, Personable {
     var managementTier: ManagementTier?
     
-    var birthDate: Date?
+    var birthDate: Date? {
+        didSet {
+            pass.birthDate = birthDate
+        }
+    }
     var visitDate: Date?
     
     var project: Project?

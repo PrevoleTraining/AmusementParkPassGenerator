@@ -36,6 +36,7 @@
 		FDC7077A201CE3A6008674F9 /* PassTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70779201CE3A6008674F9 /* PassTesterViewController.swift */; };
 		FDC7077C201DB8D6008674F9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7077B201DB8D6008674F9 /* UIView.swift */; };
 		FDC7077E201E3025008674F9 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7077D201E3025008674F9 /* UIImageView.swift */; };
+		FDC70780201E5064008674F9 /* CheckpointSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7077F201E5064008674F9 /* CheckpointSimulator.swift */; };
 		FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */; };
 		FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */; };
 		FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC120054F1900AD2B71 /* Accessable.swift */; };
@@ -108,6 +109,7 @@
 		FDC70779201CE3A6008674F9 /* PassTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTesterViewController.swift; sourceTree = "<group>"; };
 		FDC7077B201DB8D6008674F9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FDC7077D201E3025008674F9 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		FDC7077F201E5064008674F9 /* CheckpointSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointSimulator.swift; sourceTree = "<group>"; };
 		FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrantable.swift; sourceTree = "<group>"; };
 		FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
 		FDEDFCC120054F1900AD2B71 /* Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessable.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		FDEDFCEC2006E39E00AD2B71 /* check */ = {
 			isa = PBXGroup;
 			children = (
+				FDC7077F201E5064008674F9 /* CheckpointSimulator.swift */,
 				FDEDFCED2006E3B400AD2B71 /* Checkpointable.swift */,
 				FDEDFCEF2006E3DE00AD2B71 /* AreaCheckpoint.swift */,
 				FDEDFCF12006E5DC00AD2B71 /* Checkpoint.swift */,
@@ -426,6 +429,7 @@
 				FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */,
 				FDEDFCEB2006DE2C00AD2B71 /* Passable.swift in Sources */,
 				FDC70768201A95ED008674F9 /* ValidationErrorViewController.swift in Sources */,
+				FDC70780201E5064008674F9 /* CheckpointSimulator.swift in Sources */,
 				FDEDFCDD2006AB5A00AD2B71 /* Person.swift in Sources */,
 				FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */,
 				FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */,

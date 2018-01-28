@@ -1046,6 +1046,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="checkAreaAccesses:" destination="y3j-uk-Aza" eventType="touchUpInside" id="WxR-7U-Hx9"/>
                                                             <action selector="populate:" destination="KzS-OV-Nn7" eventType="touchUpInside" id="6WN-M1-2dh"/>
                                                         </connections>
                                                     </button>
@@ -1073,6 +1074,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="checkRideAccesses:" destination="y3j-uk-Aza" eventType="touchUpInside" id="sJ6-KY-mlL"/>
                                                             <action selector="populate:" destination="KzS-OV-Nn7" eventType="touchUpInside" id="HeO-co-P2X"/>
                                                         </connections>
                                                     </button>
@@ -1100,6 +1102,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="checkDiscountAccesses:" destination="y3j-uk-Aza" eventType="touchUpInside" id="oqy-3Q-ykC"/>
                                                             <action selector="populate:" destination="KzS-OV-Nn7" eventType="touchUpInside" id="92z-Ym-a7f"/>
                                                         </connections>
                                                     </button>

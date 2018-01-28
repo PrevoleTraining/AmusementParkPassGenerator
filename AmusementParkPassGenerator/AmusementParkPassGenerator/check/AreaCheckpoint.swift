@@ -13,10 +13,11 @@ class AreaCheckpoint: Checkpoint<AreaAccess> {
     /**
      * Create an area checkpoint with an area access
      *
+     * - parameter name: Checkpoint name
      * - parameter access: The area access of the terminal
      */
-    override init(access: AreaAccess) {
-        super.init(access: access)
+    override init(name: String, access: AreaAccess) {
+        super.init(name: name, access: access)
     }
     
     override func swipe(pass: Passable) -> SwipeResult {

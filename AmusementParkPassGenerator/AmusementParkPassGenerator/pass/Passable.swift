@@ -20,7 +20,7 @@ protocol Passable {
     var category: EntrantCategory { get }
     var subCategory: EntrantSubCategory? { get }
 
-    var birthDate: Date? { get }
+    var birthDate: Date? { get set }
    
     /**
      * Check if a pass gives the right to a certain area, ride

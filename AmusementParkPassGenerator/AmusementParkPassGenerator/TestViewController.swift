@@ -68,15 +68,15 @@ class TestViewController: UIViewController {
     
     lazy var checkPoints: [UIButton: Checkpointable] = {
         return [
-            amusementAccessButton: AreaCheckpoint(access: .amusement),
-            kitcherAccessButton: AreaCheckpoint(access: .kitchen),
-            rideAccessButton: AreaCheckpoint(access: .rideControl),
-            maintenanceAccessButton: AreaCheckpoint(access: .maintenance),
-            officeAccessButton: AreaCheckpoint(access: .office),
-            allRidesAccessButton: RideCheckpoint(access: .allRides),
-            skipRideLinesAccessButton: RideCheckpoint(access: .skipRideLines),
-            foodAccessButton: DiscountCheckpoint(access: .food(discount: 0)),
-            merchandiseAccessButton: DiscountCheckpoint(access: .merchandise(discount: 0))
+            amusementAccessButton: AreaCheckpoint(name: "test", access: .amusement),
+            kitcherAccessButton: AreaCheckpoint(name: "test", access: .kitchen),
+            rideAccessButton: AreaCheckpoint(name: "test", access: .rideControl),
+            maintenanceAccessButton: AreaCheckpoint(name: "test", access: .maintenance),
+            officeAccessButton: AreaCheckpoint(name: "test", access: .office),
+            allRidesAccessButton: RideCheckpoint(name: "test", access: .allRides),
+            skipRideLinesAccessButton: RideCheckpoint(name: "test", access: .skipRideLines),
+            foodAccessButton: DiscountCheckpoint(name: "test", access: .food(discount: 0)),
+            merchandiseAccessButton: DiscountCheckpoint(name: "test", access: .merchandise(discount: 0))
         ]
     }()
     

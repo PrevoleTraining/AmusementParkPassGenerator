@@ -19,10 +19,11 @@ class RideCheckpoint: Checkpoint<RideAccess> {
     /**
      * Create an ride checkpoint with an ride access
      *
+     * - parameter name: Checkpoint name
      * - parameter access: The ride access of the terminal
      */
-    override init(access: RideAccess) {
-        super.init(access: access)
+    override init(name: String, access: RideAccess) {
+        super.init(name: name, access: access)
     }
     
     /**
@@ -39,7 +40,7 @@ class RideCheckpoint: Checkpoint<RideAccess> {
         lastCheck = (pass: pass, date: Date())
         
         if let previousCheck = previousCheck, previousCheck.pass.uuid == pass.uuid && previousCheck.date.timeIntervalSinceNow > antiCheatDelay {
-            return SwipeResult(status: .denied, message: "Attempt ride access cheating")
+            return SwipeResult(status: .denied, message: "Attempt ride access cheating", tooFast: true)
         } else if pass.hasAccess(access: access) {
             return SwipeResult(status: .granted)
         } else {

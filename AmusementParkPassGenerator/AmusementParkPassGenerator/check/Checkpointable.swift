@@ -13,6 +13,8 @@ import Foundation
  * person with a pass scan it and see if he is granted the access or not.
  */
 protocol Checkpointable {
+    var name: String { get }
+    
     /**
      * Check the access rights of a pass
      *
@@ -40,8 +42,8 @@ extension Checkpointable {
         
         switch result.status {
         case .granted, .grantedForDiscount:
-            if let birthDate = pass.birthDate, Date().isToday(date: birthDate) {
-                result.add(message: "Happy Birthday! Enjoy the day in our Theme Park")
+            if let birthDate = pass.birthDate, Date().isBirthDate(date: birthDate) {
+                result.birthDateMessage = true
             }
             return result
         default: return result
