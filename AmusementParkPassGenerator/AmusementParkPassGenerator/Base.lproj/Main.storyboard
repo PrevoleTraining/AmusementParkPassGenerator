@@ -1147,11 +1147,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5y-GY-Dyv">
-                                        <rect key="frame" x="0.0" y="907" width="768" height="117"/>
+                                        <rect key="frame" x="0.0" y="907" width="768" height="110"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYL-O5-HXK">
-                                                <rect key="frame" x="150" y="25" width="468" height="67"/>
+                                                <rect key="frame" x="150" y="25" width="468" height="60"/>
                                                 <color key="backgroundColor" red="0.79607843137254897" green="0.77647058823529413" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="jRb-GN-8pI"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <state key="normal" title="Create New Pass">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1173,6 +1176,9 @@
                                             <constraint firstAttribute="trailing" secondItem="EYL-O5-HXK" secondAttribute="trailing" constant="150" id="m4a-kU-H5p"/>
                                             <constraint firstItem="EYL-O5-HXK" firstAttribute="top" secondItem="P5y-GY-Dyv" secondAttribute="top" constant="25" id="stF-BB-6qk"/>
                                         </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdS-2C-2e7">
+                                        <rect key="frame" x="0.0" y="1017" width="768" height="7"/>
                                     </view>
                                 </subviews>
                                 <constraints>
