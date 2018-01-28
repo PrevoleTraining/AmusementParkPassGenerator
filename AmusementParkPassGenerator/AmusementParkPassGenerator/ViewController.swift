@@ -93,6 +93,8 @@ class ViewController: UIViewController {
         )
     }()
     
+    var currentPerson: Personable?
+    
     required init?(coder aDecoder: NSCoder) {
         dataProvider = DataProvider()
         super.init(coder: aDecoder)
@@ -111,17 +113,17 @@ class ViewController: UIViewController {
             subCategoryButtonsStackView.addArrangedSubview(subCategoryButton.button)
         }
         
-        for (_, labelField) in labelFields {
-            labelField.field.border(color: ApplicationColor.fieldBorder.value, width: 2.0, cornerRadius: 5.0)
-            labelField.field.padding(width: 10.0)
-        }
-        
         chooseCategory(initialCategoryButton.button)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let passTesterViewController = segue.destination as? PassTesterViewController {
+            passTesterViewController.person = currentPerson
+        }
     }
     
     // MARK: - UI Logic
@@ -167,19 +169,23 @@ class ViewController: UIViewController {
     }
     
     @objc func chooseSubCategory(_ sender: UIButton? = nil) {
-        resetErrors()
+        resetState()
         clearFields()
         currentSubCategoryButton.handle(button: sender)
         managePersonalInfo()
     }
     
     @IBAction func generatePass(_ sender: UIButton) {
-        resetErrors()
+        resetState()
         
         let entrant: Entrantable? = findEntrant()
         
         if let entrant = entrant, let accesses = entrant.accesses {
-            let person = Person(pass: Pass(accesses: accesses))
+            let project: Project? = dataProvider.findProject(number: projectNumberTextInput.text)
+            let vendor: Vendor? = dataProvider.findVendor(name: companyTextInput.text)
+            
+            let pass = Pass(accesses: accesses, categoryAndSubCategory: entrant.categoryAndSubCategory, areaRestrictedEntrantables: [project, vendor])
+            let person = Person(pass: pass)
             
             person.firstName = firstNameTextInput.text
             person.lastName = lastNameTextInput.text
@@ -189,20 +195,20 @@ class ViewController: UIViewController {
             person.zipCode = zipCodeTextInput.text
             person.birthDate = Date.parse(date: birthDateTextInput.text)
             person.ssn = ssnTextInput.text
-            person.project = dataProvider.findProject(number: projectNumberTextInput.text)
-            person.vendor = dataProvider.findVendor(name: companyTextInput.text)
+            person.project = project
+            person.vendor = vendor
             person.visitDate = Date.parse(date: visitDateTextInput.text)
             
             if let managementTier = managementTierTextInput.text {
                 person.managementTier = ManagementTier(rawValue: managementTier)
             }
             
-            if let personalInfo = entrant.personalInfo {
-                handleValidationErrors(person: person, personalInfo: personalInfo)
-            } else {
+            if isValid(person: person, personalInfo: entrant.personalInfo) {
                 for (_, field) in labelFields {
                     field.clear()
                 }
+                
+                currentPerson = person
                 
                 performSegue(withIdentifier: "showPassTester", sender: nil)
             }
@@ -254,7 +260,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func resetErrors() {
+    func resetState() {
+        currentPerson = nil
+        
         for (_, field) in labelFields {
             field.reset()
         }
@@ -266,20 +274,24 @@ class ViewController: UIViewController {
         }
     }
 
-    func handleValidationErrors(person: Personable, personalInfo: [PersonalInfo]) {
-        let errors = PersonalInfo.validate(person: person, personalInfo: personalInfo)
-        
-        if !errors.isEmpty {
-            errors.forEach { (key: PersonalInfo, value: [PersonalInfoError]) in
-                if let field = labelFields[key] {
-                    field.inError()
+    func isValid(person: Personable, personalInfo: [PersonalInfo]?) -> Bool {
+        if let personalInfo = personalInfo {
+            let errors = PersonalInfo.validate(person: person, personalInfo: personalInfo)
+            
+            if !errors.isEmpty {
+                errors.forEach { (key: PersonalInfo, value: [PersonalInfoError]) in
+                    if let field = labelFields[key] {
+                        field.inError()
+                    }
                 }
-            }
 
-            openPopup(errors: errors)
-        } else {
-            performSegue(withIdentifier: "showPassTester", sender: nil)
+                openPopup(errors: errors)
+
+                return false
+            }
         }
+        
+        return true
     }
 
     func openPopup(errors: [PersonalInfo: [PersonalInfoError]]? = nil, message: String? = nil) {
@@ -341,7 +353,6 @@ class LabelAndField {
         didSet {
             field.isEnabled = isEnabled
             label.isEnabled = isEnabled
-            
             field.backgroundColor = (field.isEnabled ? ApplicationColor.fieldBackground : ApplicationColor.fieldBackgroundDisabled).value
         }
     }
@@ -356,13 +367,13 @@ class LabelAndField {
     }
     
     func inError() {
-        field.border(color: ApplicationColor.fieldBorderError.value)
+        field.borderColor = ApplicationColor.fieldBorderError.value
         field.textColor = ApplicationColor.fieldTextError.value
         label.textColor = ApplicationColor.labelError.value
     }
     
     func reset() {
-        field.border(color: ApplicationColor.fieldBorder.value)
+        field.borderColor = ApplicationColor.fieldBorder.value
         field.textColor = ApplicationColor.fieldText.value
         label.textColor = ApplicationColor.label.value
     }

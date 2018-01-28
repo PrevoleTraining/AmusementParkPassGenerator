@@ -43,7 +43,9 @@ class TestViewController: UIViewController {
     
     lazy var people: [UIButton: Personable] = {
         func createPerson(entrant: Entrantable, first: String, last: String, street: String, city: String, zip: String, state: String, birthDate: Date? = nil) -> Person {
-            return Person(pass: Pass(accesses: entrant.accesses!), firstName: first, lastName: last, street: street, city: city, state: state, zipCode: zip, birthDate: birthDate, ssn: nil, managementTier: nil, visitDate: nil, project: nil, vendor: nil)
+            return Person(pass: Pass(accesses: entrant.accesses, categoryAndSubCategory: entrant.categoryAndSubCategory, areaRestrictedEntrantables: nil),
+                          firstName: first, lastName: last, street: street, city: city, state: state, zipCode: zip,
+                          birthDate: birthDate, ssn: nil, managementTier: nil, visitDate: nil, project: nil, vendor: nil)
         }
         
         return [
@@ -140,7 +142,8 @@ class TestViewController: UIViewController {
         if entrantCreationSwitch.isOn {
             if let entrant = entrantMapping[sender] {
                 if let personalInfo = entrant.personalInfo {
-                    let validationErrors = PersonalInfo.validate(person: Person(pass: Pass(accesses: [])), personalInfo: personalInfo)
+                    let pass = Pass(accesses: entrant.accesses, categoryAndSubCategory: entrant.categoryAndSubCategory, areaRestrictedEntrantables: nil)
+                    let validationErrors = PersonalInfo.validate(person: Person(pass: pass), personalInfo: personalInfo)
 
                     if validationErrors.isEmpty {
                         checkResults.text = "Entrant can be created. All personal info are present"

@@ -56,7 +56,7 @@
 		<key>personalInfo</key>
 		<dict>
 			<key>birthDate</key>
-			<string>1960/02/16</string>
+			<string>1950/02/16</string>
 			<key>firstName</key>
 			<string>Senior</string>
 			<key>lastName</key>
@@ -148,7 +148,7 @@
 			<key>birthDate</key>
 			<string>2004/07/26</string>
 			<key>firstName</key>
-			<string>Conta</string>
+			<string>Contra</string>
 			<key>lastName</key>
 			<string>Ctor</string>
 			<key>street</key>
@@ -200,11 +200,11 @@
 			<key>birthDate</key>
 			<string>1990/03/05</string>
 			<key>firstName</key>
-			<string>Ac</string>
+			<string>Ven</string>
 			<key>lastName</key>
-			<string>Me</string>
+			<string>Dor</string>
 			<key>vendor</key>
-			<string>acme</string>
+			<string>Acme</string>
 			<key>visitDate</key>
 			<string>today()</string>
 		</dict>

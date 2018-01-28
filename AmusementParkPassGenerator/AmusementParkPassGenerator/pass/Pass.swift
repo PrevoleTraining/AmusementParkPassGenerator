@@ -13,6 +13,10 @@ import Foundation
  */
 class Pass: Passable {
     var uuid: UUID
+    
+    var category: EntrantCategory
+    var subCategory: EntrantSubCategory?
+    
     var accesses: [Accessable]
     var birthDate: Date?
     
@@ -21,8 +25,26 @@ class Pass: Passable {
      *
      * - parameter accesses: The list of granted accesses
      */
-    init(accesses: [Accessable]) {
-        self.accesses = accesses
+    init(accesses: [Accessable]?, categoryAndSubCategory: CategoryAndSubCategory, areaRestrictedEntrantables: [AreaRestrictedEntrantable?]?) {
+        if let accesses = accesses {
+            self.accesses = accesses
+        } else {
+            self.accesses = []
+        }
+        
+        if let restrictedEntrantables = areaRestrictedEntrantables {
+            for restrictedEntrantable in restrictedEntrantables {
+                if let restrictedEntrantable = restrictedEntrantable, let areaAccesses = restrictedEntrantable.accesses {
+                    for areaAccess in areaAccesses {
+                        self.accesses.append(areaAccess)
+                    }
+                }
+            }
+        }
+        
+        self.category = categoryAndSubCategory.category
+        self.subCategory = categoryAndSubCategory.subCategory
+        
         self.uuid = UUID()
     }
     

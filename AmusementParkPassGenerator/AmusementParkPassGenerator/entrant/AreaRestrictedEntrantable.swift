@@ -6,7 +6,7 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
-protocol AreaRestrictedEntrant: Descriptable {
+protocol AreaRestrictedEntrantable: Descriptable {
     // The collection of accesses granted into the park
     var accesses: [AreaAccess]? { get }
 }

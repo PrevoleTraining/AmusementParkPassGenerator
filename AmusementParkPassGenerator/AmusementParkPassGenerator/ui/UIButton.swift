@@ -13,8 +13,8 @@ extension UIButton {
         self.init()
 
         self.backgroundColor = backgroundColor
-        self.setTitleColor(titleColor, for: .normal)
-        self.setTitle(text, for: .normal)
-        self.addTarget(target, action: selector, for: .touchUpInside)
+        setTitleColor(titleColor, for: .normal)
+        setTitle(text, for: .normal)
+        addTarget(target, action: selector, for: .touchUpInside)
     }
 }

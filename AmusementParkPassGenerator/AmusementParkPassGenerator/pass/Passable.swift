@@ -16,6 +16,10 @@ import Foundation
 protocol Passable {
     var uuid: UUID { get }
     var accesses: [Accessable] { get }
+    
+    var category: EntrantCategory { get }
+    var subCategory: EntrantSubCategory? { get }
+
     var birthDate: Date? { get }
    
     /**

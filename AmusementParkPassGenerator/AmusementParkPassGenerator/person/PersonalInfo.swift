@@ -62,10 +62,10 @@ enum PersonalInfo: String, Descriptable {
         case .birthDateJunior: return [ juniorBirthDateValidatorFactory(date: person.birthDate) ]
         case .birthDateSenior: return [ seniorBirthDateValidatorFactory(date: person.birthDate) ]
         case .birthDate: return [ birthDateValidatorFactory(date: person.birthDate) ]
-        case .firstName: return stringValidatorFactory(with: person.firstName, min: 3, max: 10)
-        case .lastName: return stringValidatorFactory(with: person.lastName, min: 3, max: 10)
-        case .street: return stringValidatorFactory(with: person.street, min: 3, max: 20)
-        case .city: return stringValidatorFactory(with: person.city, min: 3, max: 10)
+        case .firstName: return stringValidatorFactory(with: person.firstName, min: 3, max: 15)
+        case .lastName: return stringValidatorFactory(with: person.lastName, min: 3, max: 15)
+        case .street: return stringValidatorFactory(with: person.street, min: 3, max: 30)
+        case .city: return stringValidatorFactory(with: person.city, min: 3, max: 20)
         case .state: return stringValidatorFactory(with: person.state, min: 2, max: 2)
         case .zip: return [ isBlankValidatorFactory(str: person.zipCode), zipCodeValidatorFactory(zip: person.zipCode) ]
         case .ssn: return [ isBlankValidatorFactory(str: person.ssn), ssnValidatorFactory(ssn: person.ssn) ]

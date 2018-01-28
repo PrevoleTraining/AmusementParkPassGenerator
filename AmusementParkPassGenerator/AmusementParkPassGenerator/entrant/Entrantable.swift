@@ -21,3 +21,9 @@ protocol Entrantable {
     // The collection of required personal information
     var personalInfo: [PersonalInfo]? { get }
 }
+
+extension Entrantable {
+    var categoryAndSubCategory: CategoryAndSubCategory {
+        return CategoryAndSubCategory(category: category, subCategory: subCategory)
+    }
+}

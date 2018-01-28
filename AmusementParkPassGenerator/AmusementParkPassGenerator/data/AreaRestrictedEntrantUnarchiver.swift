@@ -76,7 +76,7 @@ class AreaRestrictedEntrantUnarchiver {
     static func extractAccesses(from itemDictionary: [String: Any]) -> [AreaAccess] {
         var accesses: [AreaAccess] = []
         
-        if let rawAccesses = itemDictionary["AreaAccess"] as? [String] {
+        if let rawAccesses = itemDictionary["areaAccess"] as? [String] {
             for rawAccess in rawAccesses {
                 if let access = AreaAccess(rawValue: rawAccess) {
                     accesses.append(access)

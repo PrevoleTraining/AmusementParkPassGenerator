@@ -18,8 +18,6 @@ class ValidationErrorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textErrorArea.padding(width: 10.0)
-        
         if let errors = errors {
             showErrors(errors: errors)
         } else if let message = message {

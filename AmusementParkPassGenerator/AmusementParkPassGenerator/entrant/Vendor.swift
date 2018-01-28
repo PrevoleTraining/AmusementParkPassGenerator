@@ -6,7 +6,7 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
-class Vendor: AreaRestrictedEntrant, Identifiable, Descriptable {
+class Vendor: AreaRestrictedEntrantable, Identifiable, Descriptable {
     var accesses: [AreaAccess]?
     
     let name: String

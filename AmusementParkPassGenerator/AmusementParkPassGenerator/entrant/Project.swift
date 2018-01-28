@@ -6,7 +6,7 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
-class Project: AreaRestrictedEntrant, Identifiable, Descriptable {
+class Project: AreaRestrictedEntrantable, Identifiable, Descriptable {
     var accesses: [AreaAccess]?
 
     let number: String

@@ -23,6 +23,7 @@ enum ApplicationColor {
     case fieldBackgroundDisabled
     case labelError
     case label
+    case dropShadowPassCard
     
     var value: UIColor {
         switch self {
@@ -38,6 +39,7 @@ enum ApplicationColor {
         case .fieldBackground: return UIColor.white
         case .fieldBackgroundDisabled: return UIColor(red: 226/255.0, green: 222.0/255.0, blue: 229.0/255.0, alpha: 1.0)
         case .label: return UIColor(red: 95.0/255.0, green: 93.0/255.0, blue: 97.0/255.0, alpha: 1.0)
+        case .dropShadowPassCard: return UIColor(red: 193.0/255.0, green: 188.0/255.0, blue: 196.0/255.0, alpha: 1.0)
         }
     }
 }
