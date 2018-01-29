@@ -9,6 +9,9 @@
 /**
  * Contains the satus of the check verification of an access
  * and a list of messages related to the access verfications done.
+ *
+ * Additional flags like birthDateMessage are present to
+ * specialize the access/deny message
  */
 struct SwipeResult: CustomStringConvertible {
     var status: Status

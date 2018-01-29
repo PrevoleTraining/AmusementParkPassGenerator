@@ -17,6 +17,7 @@
 		FD4E2530200408C9009F5779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4E252F200408C9009F5779 /* Assets.xcassets */; };
 		FD4E2533200408C9009F5779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4E2531200408C9009F5779 /* LaunchScreen.storyboard */; };
 		FD4E253E200408C9009F5779 /* AmusementParkPassGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E253D200408C9009F5779 /* AmusementParkPassGeneratorTests.swift */; };
+		FD62CFD8201FC2940047305C /* sound in Resources */ = {isa = PBXBuildFile; fileRef = FD62CFD7201FC2940047305C /* sound */; };
 		FDC707512016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC707502016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift */; };
 		FDC7075320162450008674F9 /* AreaRestrictedEntrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075220162450008674F9 /* AreaRestrictedEntrantable.swift */; };
 		FDC70755201624B0008674F9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70754201624B0008674F9 /* Identifiable.swift */; };
@@ -90,6 +91,7 @@
 		FD4E2539200408C9009F5779 /* AmusementParkPassGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmusementParkPassGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4E253D200408C9009F5779 /* AmusementParkPassGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmusementParkPassGeneratorTests.swift; sourceTree = "<group>"; };
 		FD4E253F200408C9009F5779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD62CFD7201FC2940047305C /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 		FDC707502016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaRestrictedEntrantUnarchiver.swift; sourceTree = "<group>"; };
 		FDC7075220162450008674F9 /* AreaRestrictedEntrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaRestrictedEntrantable.swift; sourceTree = "<group>"; };
 		FDC70754201624B0008674F9 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		FD4E2527200408C9009F5779 /* AmusementParkPassGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				FD62CFD7201FC2940047305C /* sound */,
 				FDEDFCE42006AF1D00AD2B71 /* extensions */,
 				FDEDFCBA20054E3D00AD2B71 /* access */,
 				FDEDFCEC2006E39E00AD2B71 /* check */,
@@ -399,6 +402,7 @@
 				FD4E2530200408C9009F5779 /* Assets.xcassets in Resources */,
 				FD4E252E200408C9009F5779 /* Main.storyboard in Resources */,
 				FD3C932A2015CBF200E971F6 /* projects.plist in Resources */,
+				FD62CFD8201FC2940047305C /* sound in Resources */,
 				FDEDFCDA20057D5400AD2B71 /* entrants.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

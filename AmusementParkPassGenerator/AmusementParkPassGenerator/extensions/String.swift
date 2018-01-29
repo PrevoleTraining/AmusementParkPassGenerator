@@ -24,6 +24,11 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
     
+    /**
+     * Check if the string is an integer
+     *
+     * - Returns: True if the string is an integer
+     */
     var isInt: Bool {
         return Int(self) != nil
     }

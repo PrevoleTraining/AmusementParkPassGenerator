@@ -6,12 +6,16 @@
 //  Copyright © 2018 prevole.ch. All rights reserved.
 //
 
+/**
+ * Consolidate the various data sources
+ */
 class DataProvider {
     var entrants: [Entrantable]?
     var projects: [Project]
     var vendors: [Vendor]
     var population: PopulationInfoCollection
     
+    /// Different categories present in the entrants
     lazy var categories: [EntrantCategory] = {
         var categories: [EntrantCategory] = []
     
@@ -28,6 +32,7 @@ class DataProvider {
         return categories
     }()
     
+    /// Same for sub categories
     lazy var subCategorie: [EntrantSubCategory] = {
         var subCategories: [EntrantSubCategory] = []
     
@@ -44,6 +49,9 @@ class DataProvider {
         return subCategories
     }()
     
+    /**
+     * Constructor
+     */
     init() {
         do {
             var array = try PlistConverter.array(fromFile: "entrants", ofType: "plist")

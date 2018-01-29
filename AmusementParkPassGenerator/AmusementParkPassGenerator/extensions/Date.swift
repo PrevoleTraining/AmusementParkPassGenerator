@@ -126,6 +126,13 @@ extension Date {
         return formatter.string(from: self)
     }
     
+    /**
+     * Parse a date from a string
+     *
+     * - parameter date: The string date to parse
+     *
+     * - Returns: The date parsed
+     */
     static func parse(date: String?) -> Date? {
         if let date = date {
             let formatter = DateFormatter()

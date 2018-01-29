@@ -1,6 +1,6 @@
 //
 //  PListConverter.swift
-//  BoutTime
+//  AmusementParkPassGenerator
 //
 //  Updated by PrevoleTraining on 15.12.17. (From treehouse 3rd course VendingMachine)
 //  Copyright © 2017 PrevoleTraining. All rights reserved.

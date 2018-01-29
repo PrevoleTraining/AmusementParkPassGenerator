@@ -1,6 +1,6 @@
 //
-//  EventCollectionUnarchiver.swift
-//  BoutTime
+//  AreaRestrictedEntrantUnarchiver.swift
+//  AmusementParkPassGenerator
 //
 //  Created by PrevoleTraining on 22.01.18
 //  Copyright © 2017 PrevoleTraining. All rights reserved.
@@ -9,7 +9,7 @@ import Foundation
 import os.log
 
 /**
- Converter of entrants loaded from a plist to the entrants collection
+ * Converter of vendors or projcets loaded from a plist
  */
 class AreaRestrictedEntrantUnarchiver {
     static let log = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "data")

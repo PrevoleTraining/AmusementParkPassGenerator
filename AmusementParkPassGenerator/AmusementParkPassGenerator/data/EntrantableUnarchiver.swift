@@ -1,6 +1,6 @@
 //
-//  EventCollectionUnarchiver.swift
-//  BoutTime
+//  EntrantableUnarchiver.swift
+//  AmusementParkPassGenerator
 //
 //  Created by PrevoleTraining on 15.12.17.
 //  Updated by PrevoleTraining on 09.01.18
@@ -125,6 +125,13 @@ class EntrantableUnarchiver {
         return personalInfo
     }
     
+    /**
+     * Unarchive the category and sub category from similar structured files
+     *
+     * - parameter itemDictionnary: The data to extract
+     *
+     * - return The category and subcategory found
+     */
     static func unarchiveCategeryAndSubCategory(itemDictionary: [String: Any]) -> CategoryAndSubCategory {
         if let rawCategory = itemDictionary["category"] as? String,
             let category = EntrantCategory(rawValue: rawCategory) {

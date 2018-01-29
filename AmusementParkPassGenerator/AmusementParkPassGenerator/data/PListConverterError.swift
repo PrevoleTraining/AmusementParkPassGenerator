@@ -1,6 +1,6 @@
 //
 //  PListConverterError.swift
-//  BoutTime
+//  AmusementParkPassGenerator
 //
 //  Created by PrevoleTraining on 15.12.17.
 //  Copyright © 2017 PrevoleTraining. All rights reserved.

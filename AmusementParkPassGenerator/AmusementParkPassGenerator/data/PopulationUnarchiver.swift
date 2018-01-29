@@ -1,6 +1,6 @@
 //
-//  EventCollectionUnarchiver.swift
-//  BoutTime
+//  PopulationInfoUnarchiver.swift
+//  AmusementParkPassGenerator
 //
 //  Created by PrevoleTraining on 27.01.18
 //  Copyright © 2017 PrevoleTraining. All rights reserved.
@@ -58,6 +58,13 @@ class PopulationInfoUnarchiver {
         return population
     }
     
+    /**
+     * Extract the content of one field from the item dictionary
+     *
+     * - parameter itemDictionary: The item dictionary where to extract the data
+     * - parameter field: The field to extract
+     * - parameter extractor: The extractor to handle the retrieve data
+     */
     static func extract(itemDictionary: [String: Any], field: String, _ extractor: (String?) -> Void) {
         if let value = itemDictionary[field] as? String {
             extractor(value)
