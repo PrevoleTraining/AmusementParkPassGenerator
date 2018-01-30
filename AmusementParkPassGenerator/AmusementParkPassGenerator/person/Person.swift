@@ -16,6 +16,7 @@ class Person: PersonBase, Personable {
     
     var birthDate: Date? {
         didSet {
+            // Update the birth date on the pass
             pass.birthDate = birthDate
         }
     }
@@ -39,14 +40,19 @@ class Person: PersonBase, Personable {
      * Constructor
      *
      * - parameters:
-     *  - pass: The pass given to the person
-     *  - firstName: First name
-     *  - lastName: Last name
-     *  - street: Street
-     *  - city: City
-     *  - state: State
-     *  - zipCode: ZIP Code
-     *  - birthDate: Birth date
+     * - pass: The pass given to the person
+     * - firstName: First name
+     * - lastName: Last name
+     * - street: Street
+     * - city: City
+     * - state: State
+     * - zipCode: ZIP Code
+     * - birthDate: Birth date
+     * - ssn: Social security number
+     * - managementTier: Management tier
+     * - visitDate: The date of visit
+     * - project: Project
+     * - vendor: Vendor
      */
     convenience init(pass: Passable, firstName: String, lastName: String, street: String, city: String, state: String, zipCode: String, birthDate: Date?, ssn: String?, managementTier: ManagementTier?, visitDate: Date?, project: Project?, vendor: Vendor?) {
         self.init(pass: pass)

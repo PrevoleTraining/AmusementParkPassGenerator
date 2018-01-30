@@ -9,6 +9,9 @@
 import UIKit
 
 extension UITextField {
+    /**
+     * Apply a padding on the left and right inside the text field
+     */
     @IBInspectable
     var leftRightPadding: CGFloat {
         get {

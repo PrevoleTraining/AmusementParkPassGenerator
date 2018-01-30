@@ -24,6 +24,8 @@ class Pass: Passable {
      * Constructor
      *
      * - parameter accesses: The list of granted accesses
+     * - parameter categoryAndSubCategory: The category and sub category
+     * - parameter areaRestrictedEntrantables: Additional accesses
      */
     init(accesses: [Accessable]?, categoryAndSubCategory: CategoryAndSubCategory, areaRestrictedEntrantables: [AreaRestrictedEntrantable?]?) {
         if let accesses = accesses {
@@ -32,6 +34,7 @@ class Pass: Passable {
             self.accesses = []
         }
         
+        // Consolidate all the accesses into one collection
         if let restrictedEntrantables = areaRestrictedEntrantables {
             for restrictedEntrantable in restrictedEntrantables {
                 if let restrictedEntrantable = restrictedEntrantable, let areaAccesses = restrictedEntrantable.accesses {

@@ -2,13 +2,16 @@
 //  UIView.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 28.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 28.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 import UIKit
 
 extension UIView {
+    /**
+     * Apply a corner radius to the border
+     */
     @IBInspectable
     var cornerRadius: CGFloat {
         get {
@@ -19,6 +22,9 @@ extension UIView {
         }
     }
     
+    /**
+     * Define the border width
+     */
     @IBInspectable
     var borderWidth: CGFloat {
         get {
@@ -29,6 +35,9 @@ extension UIView {
         }
     }
     
+    /**
+     * Define the border color
+     */
     @IBInspectable
     var borderColor: UIColor? {
         get {
@@ -46,6 +55,9 @@ extension UIView {
         }
     }
     
+    /**
+     * Define the shadow size
+     */
     @IBInspectable
     var shadowRadius: CGFloat {
         get {
@@ -56,6 +68,9 @@ extension UIView {
         }
     }
     
+    /**
+     * Define the shadow opacity
+     */
     @IBInspectable
     var shadowOpacity: Float {
         get {
@@ -66,6 +81,9 @@ extension UIView {
         }
     }
     
+    /**
+     * Define the shadow distance from the view
+     */
     @IBInspectable
     var shadowOffset: CGSize {
         get {
@@ -76,6 +94,9 @@ extension UIView {
         }
     }
     
+    /**
+     * Define the shadow color
+     */
     @IBInspectable
     var shadowColor: UIColor? {
         get {
@@ -93,7 +114,15 @@ extension UIView {
         }
     }
     
-    // https://stackoverflow.com/questions/39624675/add-shadow-on-uiview-using-swift-3
+    /**
+     * Create a drop shadow to the view.
+     * Code from: https://stackoverflow.com/questions/39624675/add-shadow-on-uiview-using-swift-3
+     *
+     * - parameter color: The color of the shadow
+     * - width: The width for the shadow offset
+     * - height: The height for the shadow offset
+     * - radius: The size of the shadow
+     */
     func dropShadow(color: UIColor, width: Int, height: Int, radius: Int) {
         layer.masksToBounds = false
         layer.shadowColor = color.cgColor
@@ -105,8 +134,11 @@ extension UIView {
         layer.rasterizationScale = 1
     }
     
-    // https://stackoverflow.com/a/30840942/1618785
-    public func addFullInnerShadow(topColor: UIColor = UIColor.black.withAlphaComponent(0.3)) {
+    /**
+     * Create a full inner shadow inside the view
+     * Code from: https://stackoverflow.com/a/30840942/1618785
+     */
+    public func addFullInnerShadow() {
         let innerShadow = CALayer()
         innerShadow.frame = bounds
         
@@ -127,7 +159,10 @@ extension UIView {
         layer.addSublayer(innerShadow)
     }
     
-    public func addTopInnerShadow(topColor: UIColor = UIColor.black.withAlphaComponent(0.3)) {
+    /**
+     * Create an inner shadow only at the top of the view
+     */
+    public func addTopInnerShadow() {
         let innerShadow = CALayer()
         innerShadow.frame = bounds
         innerShadow.cornerRadius = cornerRadius

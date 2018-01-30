@@ -54,8 +54,8 @@ enum PersonalInfo: String, Descriptable {
      * Retrieve the validators for a specific personal info
      *
      * - parameter person: A person
-     * - parameter projects: A collection of projects
-     * - parameter
+     *
+     * - returns: Closures of validation
      */
     func validators(person: Personable) -> [() -> PersonalInfoError?] {
         switch self {

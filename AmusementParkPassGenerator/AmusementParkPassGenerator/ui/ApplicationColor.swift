@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ * Define various UI Colors used in the application
+ */
 enum ApplicationColor {
     case categoryButtonText
     case categoryButton

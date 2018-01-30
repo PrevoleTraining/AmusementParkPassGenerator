@@ -2,16 +2,20 @@
 //  ValidationErrorViewController.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 25.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 25.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 import UIKit
 
+/**
+ * Controller to show the validation errors or generic error
+ */
 class ValidationErrorViewController: UIViewController {
 
     @IBOutlet weak var textErrorArea: UITextView!
     
+    // The validation errors or a simple message
     var errors: [PersonalInfo: [PersonalInfoError]]?
     var message: String?
     
@@ -29,14 +33,24 @@ class ValidationErrorViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    /**
+     * Close the error popup
+     */
     @IBAction func dismissPopup(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - UI Helpers
+    
+    /**
+     * Show the errors in the popup
+     *
+     * - parameter errors: The errors to show
+     */
     func showErrors(errors: [PersonalInfo: [PersonalInfoError]]) {
         var completeMessage = ""
         
+        // Format the errors and simplify some errors
         for (key, errorMessages) in errors {
             completeMessage += "\(key.description())\n"
             

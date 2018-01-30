@@ -23,6 +23,11 @@ protocol Entrantable {
 }
 
 extension Entrantable {
+    /**
+     * Shortcut method to get the category and sub category in one call
+     *
+     * - returns: The category and sub category in a consolidated type
+     */
     var categoryAndSubCategory: CategoryAndSubCategory {
         return CategoryAndSubCategory(category: category, subCategory: subCategory)
     }

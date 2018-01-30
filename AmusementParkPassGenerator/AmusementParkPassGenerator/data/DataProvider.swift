@@ -2,8 +2,8 @@
 //  DataProvider.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 23.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 23.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 /**
@@ -53,6 +53,7 @@ class DataProvider {
      * Constructor
      */
     init() {
+        // Load the four data collection used by the application
         do {
             var array = try PlistConverter.array(fromFile: "entrants", ofType: "plist")
             entrants = try EntrantableUnarchiver.entrants(fromArray: array)
@@ -70,6 +71,12 @@ class DataProvider {
         }
     }
     
+    /**
+     * Retrieve the sub categories available in the application according
+     * to the data loaded.
+     *
+     * returns: The collection of sub categories
+     */
     func subCategories() -> [EntrantSubCategory] {
         var subCategories: [EntrantSubCategory] = []
         
@@ -86,6 +93,15 @@ class DataProvider {
         return subCategories
     }
     
+    /**
+     * Try to find an entrant corresponding to the category and subcategory
+     *
+     * Parameters:
+     * - category: The category
+     * - subCategory: The sub category
+     *
+     * - returns: An entrant if found in the corredponing collection
+     */
     func findEntrantFor(category: EntrantCategory, subCategory: EntrantSubCategory? = nil) -> Entrantable? {
         if let entrants = entrants {
             for entrant in entrants {
@@ -98,6 +114,13 @@ class DataProvider {
         return nil
     }
     
+    /**
+     * Find a project by its number identifier
+     *
+     * - parameter number: The project number
+     *
+     * - returns: A project if found
+     */
     func findProject(number: String?) -> Project? {
         if let number = number {
             return projects.filter({ $0.number == number }).first
@@ -106,6 +129,13 @@ class DataProvider {
         }
     }
     
+    /**
+     * Find a vendor by its name identifier
+     *
+     * - parameter name: The vendor name
+     *
+     * - returns: A vendor if found
+     */
     func findVendor(name: String?) -> Vendor? {
         if let name = name {
             return vendors.filter({ $0.name == name }).first

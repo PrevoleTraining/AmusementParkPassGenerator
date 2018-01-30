@@ -42,4 +42,7 @@ class Entrant: Entrantable {
     }
 }
 
+/**
+ * An alias type of a tuple that contains a category and sub category
+ */
 typealias CategoryAndSubCategory = (category: EntrantCategory, subCategory: EntrantSubCategory?)

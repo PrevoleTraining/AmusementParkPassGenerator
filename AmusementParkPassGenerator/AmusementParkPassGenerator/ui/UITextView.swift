@@ -2,13 +2,16 @@
 //  UITextView.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 27.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 27.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 import UIKit
 
 extension UITextView {
+    /**
+     * Add a padding on the four inside sides of the text view
+     */
     @IBInspectable
     var padding: CGFloat {
         get {

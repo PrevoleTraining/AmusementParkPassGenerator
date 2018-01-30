@@ -6,11 +6,19 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
+/**
+ * Represent a project of employees of the park
+ */
 class Project: AreaRestrictedEntrantable, Identifiable, Descriptable {
     var accesses: [AreaAccess]?
 
     let number: String
     
+    /**
+     * Constructor
+     *
+     * - parameter number: The project's number
+     */
     init(number: String) {
         self.number = number
     }

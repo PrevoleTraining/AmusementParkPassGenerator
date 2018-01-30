@@ -2,12 +2,15 @@
 //  PassTesterViewController.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 27.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 27.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 import UIKit
 
+/**
+ * The controller for the UI which allow to test a Pass
+ */
 class PassTesterViewController: UIViewController {
     @IBOutlet weak var faceImage: UIImageView!
     @IBOutlet weak var descriptionDataView: UIView!
@@ -24,8 +27,10 @@ class PassTesterViewController: UIViewController {
     
     @IBOutlet weak var accessResultsTextArea: UITextView!
     
+    // The simulator to test the pass on various check points
     let simulator: CheckpointSimulator = CheckpointSimulator()
     
+    // The person and its pass
     var person: Personable?
     var pass: Pass?
     
@@ -41,22 +46,34 @@ class PassTesterViewController: UIViewController {
 
     // MARK: - Actions
     
+    /**
+     * Back to the main screen
+     */
     @IBAction func createNewPass(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
+    /**
+     * Verification of the area accesses
+     */
     @IBAction func checkAreaAccesses(_ sender: Any) {
         if let person = person {
             showSwipeResults(results: simulator.testAreaCheckpoints(pass: person.pass))
         }
     }
     
+    /**
+     * Verification of the ride accesses
+     */
     @IBAction func checkRideAccesses(_ sender: Any) {
         if let person = person {
             showSwipeResults(results: simulator.testRideCheckpoints(pass: person.pass))
         }
     }
     
+    /**
+     * Verification of the discount accesses
+     */
     @IBAction func checkDiscountAccesses(_ sender: Any) {
         if let person = person {
             showSwipeResults(results: simulator.testDiscountCheckpoints(pass: person.pass))
@@ -65,11 +82,17 @@ class PassTesterViewController: UIViewController {
     
     // MARK: - UI Helpers
     
+    /**
+     * Prepare the UI
+     */
     func setup() {
         accessResultsTextArea.addFullInnerShadow()
         descriptionHoleView.addTopInnerShadow()
     }
     
+    /**
+     * Populate the data in the UI
+     */
     func populateData() {
         if let person = person {
             let firstLastName = "\(person.firstName ?? "Unknown") \(person.lastName ?? "")".trimmingCharacters(in: CharacterSet(charactersIn: " "))
@@ -92,6 +115,11 @@ class PassTesterViewController: UIViewController {
         }
     }
     
+    /**
+     * Show swipe accesses
+     *
+     * - parameter results: The results of the swipe
+     */
     func showSwipeResults(results: [String: SwipeResult]) {
         let attributedString: NSMutableAttributedString = NSMutableAttributedString()
 

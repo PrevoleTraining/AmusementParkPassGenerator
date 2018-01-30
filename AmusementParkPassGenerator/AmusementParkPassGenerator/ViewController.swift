@@ -2,12 +2,15 @@
 //  ViewController.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 22.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 22.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 import UIKit
 
+/**
+ * Controller for the main view of the application
+ */
 class ViewController: UIViewController {
     // MARK: - Stacks
     
@@ -46,6 +49,7 @@ class ViewController: UIViewController {
     
     // MARK: - Attributes
     
+    /// Store a reference of the personal data fields with their enum corresponding value
     lazy var labelFields: [PersonalInfo: LabelAndField] = {
         return [
             .birthDate: LabelAndField(field: birthDateTextInput, label: birthDateLabel),
@@ -65,16 +69,20 @@ class ViewController: UIViewController {
         ]
     }()
     
+    /// Reference to the category buttons (top button bar)
     lazy var categoryButtons: [CategoryButton] = {
         return createCategoryButtons(for: dataProvider.categories)
     }()
     
+    /// Reference to the sub category buttons (second bar at the top)
     lazy var subCategoryButtons: [SubCategoryButton] = {
         return createSubCategoryButtons(for: dataProvider.subCategories())
     }()
     
+    /// The data provider containing all the loaded data
     var dataProvider: DataProvider
     
+    /// Category state button
     lazy var currentCategoryButton: ButtonState<CategoryButton> = {
         return ButtonState<CategoryButton>(
             color: ApplicationColor.categoryButtonText.value,
@@ -84,6 +92,7 @@ class ViewController: UIViewController {
         )
     }()
     
+    /// Sub category state button
     lazy var currentSubCategoryButton: ButtonState<SubCategoryButton> = {
         return ButtonState<SubCategoryButton>(
             color: ApplicationColor.subCategoryButtonText.value,
@@ -92,7 +101,8 @@ class ViewController: UIViewController {
             currentButton: nil
         )
     }()
-    
+
+    /// The current person being created
     var currentPerson: Personable?
     
     required init?(coder aDecoder: NSCoder) {
@@ -113,6 +123,7 @@ class ViewController: UIViewController {
             subCategoryButtonsStackView.addArrangedSubview(subCategoryButton.button)
         }
         
+        // Initialize the top button bars with the first category and first sub category if any
         chooseCategory(initialCategoryButton.button)
     }
 
@@ -121,19 +132,26 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Give the current person being created to the pass tester view
         if let passTesterViewController = segue.destination as? PassTesterViewController {
             passTesterViewController.person = currentPerson
         }
     }
     
     // MARK: - UI Logic
+    
+    /**
+     * Enable/Disable the data fields regarding the current entrant
+     */
     func managePersonalInfo() {
         let entrant: Entrantable? = findEntrant()
 
+        // Disable all personal info because the future info is not enought to do the job
         for (_, labelField) in labelFields {
             labelField.isEnabled = false
         }
         
+        // Enable the required fields
         if let entrant = entrant, let personalInfoCollection = entrant.personalInfo {
             for personalInfo in personalInfoCollection {
                 if let labelButton = labelFields[personalInfo] {
@@ -144,11 +162,16 @@ class ViewController: UIViewController {
     }
     
     // MARK: - UI Actions
+    
+    /**
+     * Category is touched
+     */
     @objc func chooseCategory(_ sender: UIButton) {
         currentCategoryButton.handle(button: sender)
         
         if let category = currentCategoryButton.currentButton?.category {
             var subCategoryButtonsForCategory: [SubCategoryButton] = []
+            // Show/Hide the sub category buttons corresponding to the category
             for subCategoryButton in subCategoryButtons {
                 if subCategoryButton.category == category {
                     subCategoryButtonsForCategory.append(subCategoryButton)
@@ -158,6 +181,7 @@ class ViewController: UIViewController {
                 }
             }
             
+            // If no sub category buttons visible, we hide the complete bar
             if subCategoryButtonsForCategory.count > 0 {
                 subCategoryButtonsStackView.isHidden = false
                 chooseSubCategory(subCategoryButtonsForCategory.first!.button)
@@ -168,6 +192,9 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     * Sub category is touched
+     */
     @objc func chooseSubCategory(_ sender: UIButton? = nil) {
         resetState()
         clearFields()
@@ -175,18 +202,25 @@ class ViewController: UIViewController {
         managePersonalInfo()
     }
     
+    /**
+     * Generate pass is touched
+     */
     @IBAction func generatePass(_ sender: UIButton) {
+        // Reset the app state to validate a fresh data set
         resetState()
         
         let entrant: Entrantable? = findEntrant()
         
         if let entrant = entrant, let accesses = entrant.accesses {
+            // Retrieve the project and vendor
             let project: Project? = dataProvider.findProject(number: projectNumberTextInput.text)
             let vendor: Vendor? = dataProvider.findVendor(name: companyTextInput.text)
             
+            // Create a eligible pass and person
             let pass = Pass(accesses: accesses, categoryAndSubCategory: entrant.categoryAndSubCategory, areaRestrictedEntrantables: [project, vendor])
             let person = Person(pass: pass)
             
+            // Fill the personal info
             person.firstName = firstNameTextInput.text
             person.lastName = lastNameTextInput.text
             person.street = streetTextInput.text
@@ -199,25 +233,34 @@ class ViewController: UIViewController {
             person.vendor = vendor
             person.visitDate = Date.parse(date: visitDateTextInput.text)
             
+            // Same for management tier except we convert it from text to its enum
             if let managementTier = managementTierTextInput.text {
                 person.managementTier = ManagementTier(rawValue: managementTier)
             }
             
+            // Do the data validation
             if isValid(person: person, personalInfo: entrant.personalInfo) {
+                // Clear all the fields
                 for (_, field) in labelFields {
                     field.clear()
                 }
                 
                 currentPerson = person
                 
+                // Show the tester screen
                 performSegue(withIdentifier: "showPassTester", sender: nil)
             }
         } else {
+            // Show a generic error. This should never happen
             openPopup(message: "Unknown error, ask your App's Developer")
         }
     }
     
+    /**
+     * Populate button is touched
+     */
     @IBAction func populate(_ sender: UIButton) {
+        // We find a sample person and we fill the fields on the screen with its data
         if let samplePerson = findSamplePerson() {
             firstNameTextInput.text = samplePerson.firstName
             lastNameTextInput.text = samplePerson.lastName
@@ -236,6 +279,13 @@ class ViewController: UIViewController {
     
     // MARK: - UI Builders
     
+    /**
+     * Create the buttons for the given categories
+     *
+     * - parameter for: The categories
+     *
+     * - returns: The collection of created buttons
+     */
     func createCategoryButtons(for categories: [EntrantCategory]) -> [CategoryButton] {
         return categories.map {
             return CategoryButton(category: $0, button: UIButton(
@@ -248,6 +298,13 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     * Create the buttons for the given sub categories
+     *
+     * - parameter for: The sub categories
+     *
+     * - returns: The collection of created buttons
+     */
     func createSubCategoryButtons(for subCategories: [EntrantSubCategory]) -> [SubCategoryButton] {
         return subCategories.map {
             return SubCategoryButton(category: $0.category(), subCategory: $0, button: UIButton(
@@ -260,6 +317,9 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     * Reset the main view state
+     */
     func resetState() {
         currentPerson = nil
         
@@ -268,23 +328,38 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     * Clear the data in the text fields
+     */
     func clearFields() {
         for (_, field) in labelFields {
             field.clear()
         }
     }
 
+    /**
+     * Check if the personal info filled for a person are valid
+     *
+     * - parameter person: The person to check
+     * - parameter personalInfo: The personal info to check
+     *
+     * - returns: True if no error, false otherwise but also open a popup with errors
+     */
     func isValid(person: Personable, personalInfo: [PersonalInfo]?) -> Bool {
         if let personalInfo = personalInfo {
+            // Validate the person against the chosen peronal info
             let errors = PersonalInfo.validate(person: person, personalInfo: personalInfo)
             
+            // Check if there are errors
             if !errors.isEmpty {
+                // Update the UI of the fields to reflect the erros (ex: red border)
                 errors.forEach { (key: PersonalInfo, value: [PersonalInfoError]) in
                     if let field = labelFields[key] {
                         field.inError()
                     }
                 }
 
+                // Open the error popup
                 openPopup(errors: errors)
 
                 return false
@@ -294,21 +369,36 @@ class ViewController: UIViewController {
         return true
     }
 
+    /**
+     * Open the error popup to show the errors to the user
+     *
+     * - parameter errors: The errors to show
+     * - parameter message: A message to show
+     */
     func openPopup(errors: [PersonalInfo: [PersonalInfoError]]? = nil, message: String? = nil) {
+        // Prepare the popup
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let popup = storyboard.instantiateViewController(withIdentifier: "validationErrorView") as! ValidationErrorViewController
         
+        // Configure it
         popup.modalPresentationStyle = .overFullScreen
         popup.modalTransitionStyle = .crossDissolve
 
+        // Set the data
         popup.errors = errors
         popup.message = message
         
+        // Present it
         self.present(popup, animated: true, completion: nil)
     }
     
     // MARK: - Helpers
     
+    /**
+     * Find an entrant corresponding to the current category and sub cateogory state of the application
+     *
+     * - returns: The entrant found
+     */
     func findEntrant() -> Entrantable? {
         if let subCategoryButton = currentSubCategoryButton.currentButton {
             return dataProvider.findEntrantFor(category: subCategoryButton.category, subCategory: subCategoryButton.subCategory)
@@ -319,6 +409,11 @@ class ViewController: UIViewController {
         }
     }
 
+    /**
+     * Find an sample person corresponding to the current category and sub cateogory state of the application
+     *
+     * - returns: The sample person found
+     */
     func findSamplePerson() -> PopulationInfo? {
         if let subCategoryButton = currentSubCategoryButton.currentButton {
             return dataProvider.population.findBy(category: subCategoryButton.category, subCategory: subCategoryButton.subCategory)
@@ -330,25 +425,40 @@ class ViewController: UIViewController {
     }
 }
 
+/**
+ * Protocol to make available a button
+ */
 protocol Buttonable {
     var button: UIButton { get set }
 }
 
+/**
+ * To store a category with its associated button
+ */
 struct CategoryButton: Buttonable {
     var category: EntrantCategory
     var button: UIButton
 }
 
+/**
+ * To store a sub category with its associated button and parent category
+ */
 struct SubCategoryButton: Buttonable {
     var category: EntrantCategory
     var subCategory: EntrantSubCategory
     var button: UIButton
 }
 
+/**
+ * Group a field and label together
+ */
 class LabelAndField {
     var field: UITextField
     var label: UILabel
     
+    /**
+     * Enable/Disable the field and label at once
+     */
     var isEnabled: Bool = true {
         didSet {
             field.isEnabled = isEnabled
@@ -357,21 +467,36 @@ class LabelAndField {
         }
     }
     
+    /**
+     * Constructor
+     *
+     * - parameter field: The text field
+     * - parameter label: The label associated to the field
+     */
     init(field: UITextField, label: UILabel) {
         self.field = field
         self.label = label
     }
     
+    /**
+     * Clear the text field
+     */
     func clear() {
         field.text = nil
     }
     
+    /**
+     * Manage the field and label to show the error state
+     */
     func inError() {
         field.borderColor = ApplicationColor.fieldBorderError.value
         field.textColor = ApplicationColor.fieldTextError.value
         label.textColor = ApplicationColor.labelError.value
     }
     
+    /**
+     * Reset the error state from the label and text field
+     */
     func reset() {
         field.borderColor = ApplicationColor.fieldBorder.value
         field.textColor = ApplicationColor.fieldText.value
@@ -379,20 +504,29 @@ class LabelAndField {
     }
 }
 
+/**
+ * Store the state of a button for the category or sub category
+ */
 struct ButtonState<T: Buttonable> {
     var color: UIColor
     var highlightColor: UIColor
     var buttons: [T]
     var currentButton: T?
     
+    /**
+     * Switch to the latest button touched
+     */
     mutating func handle(button: UIButton? = nil) {
+        // Restore the current button to its normal UI state
         if let previousButton = currentButton {
             previousButton.button.setTitleColor(color, for: .normal)
         }
         
         if let button = button {
+            // Find the new button
             currentButton = buttons.filter({ $0.button == button }).first
             
+            // Update the new button to reflect the user choice
             if let currentButton = currentButton {
                 currentButton.button.setTitleColor(highlightColor, for: .normal)
             }

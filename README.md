@@ -2,6 +2,37 @@
 
 > Generates Pass for amusement park employees, vendors and guests.
 
+## Branch - Part 2 (Treehouse - Project 05)
+
+In this part, the goal is to refactor few business logic and to build the UI of the application.
+
+The UI must conform to the provided mockups or at least must be really similar to them.
+
+> You will now take the foundation you created in Project 4 (Amusement Park Generator (I)) and add the User Interface for the app, along with a short list of new features and entrant types handling. You might need to refactor some code in order to accommodate these changes.
+
+> Upon completion, you will have a functional iPad app, created entirely yourself! The app can take user input and create personalized entrant passes for all the entrant types. When the passes are being swiped at different locations in the park, business rules such as whether the entrant is allowed to access an area, whether the entrant can get a discount, will be tested.
+
+## How to test - Part 2 (Treehouse - Project 05)
+
+Launch the app with the simulator and play with the controls. On the main screen you can choose a category (top button bar) and then, if available, you can chose a sub category. These selections will prepare the creation of the pass. It will also decide which fields are required to be filled to create the pass.
+
+You can populate the fields with the corresponding button which will fill only the relevant fields.
+
+Pressing the generate pass button will create the pass and show the testing pass screen if there is no validation error. If there is validation errors, a popup will tell you what are the errors in the fields and the fields will be borderized with a red color.
+
+On the test screen, you will see details about the person and the pass if relevant. There are three buttons to test the different access types. The area, ride and discount accesses. For each type, all the possible accesses are checked. A selection of checkpoints are prepared to do these tests. In the result rectangle, you will see all the results for one sets of accesses at a time.
+
+You can go back to the main screen by pressing create new pass button
+
+## Known issues - Part 2 (Treehouse - Project 05)
+
+* In the screen to test the accesses, the inner shadow does not render properly. Right border of the shadow is not aligned with right border of textview
+* In the main screen, when the keyboard is shown on screen, it hides some fields. Workaround is to click on the button to hide the keyboard.
+
+## Notes for reviewer - Part 2 (Treehouse - Project 05)
+
+Regarding the exceeding expectations, I was not able to use the sounds. It will not be great to play the sound five times in a row when testing the five category of area accesses for example. The code is present and as it is the same than the two projects 2 and 3, I assume I can let this aside at the moment. You will find the code ready to use in the project.
+
 ## Branch - Part 1 (Treehouse - Project 04)
 
 In this part, the goal is to prepare the data model and the mechanism to manage

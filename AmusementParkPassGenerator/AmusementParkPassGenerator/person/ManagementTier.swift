@@ -6,6 +6,9 @@
 //  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
+/**
+ * The management tiers
+ */
 enum ManagementTier: String, Descriptable {
     case shift
     case general
