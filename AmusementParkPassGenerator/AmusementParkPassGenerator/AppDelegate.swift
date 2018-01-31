@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  AmusementParkPassGenerator
 //
-//  Created by lprevost on 08.01.18.
-//  Copyright © 2018 prevole.ch. All rights reserved.
+//  Created by PrevoleTraining on 08.01.18.
+//  Copyright © 2018 PrevoleTraining. All rights reserved.
 //
 
 import UIKit

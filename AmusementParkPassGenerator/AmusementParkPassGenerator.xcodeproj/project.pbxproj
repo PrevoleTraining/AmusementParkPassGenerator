@@ -7,12 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD3C932620156D4900E971F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3C932520156D4900E971F6 /* ViewController.swift */; };
+		FD3C93292015CBF200E971F6 /* vendors.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD3C93272015CBF200E971F6 /* vendors.plist */; };
+		FD3C932A2015CBF200E971F6 /* projects.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD3C93282015CBF200E971F6 /* projects.plist */; };
+		FD3C932C2015FF0E00E971F6 /* ManagementTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3C932B2015FF0E00E971F6 /* ManagementTier.swift */; };
 		FD4E2529200408C9009F5779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E2528200408C9009F5779 /* AppDelegate.swift */; };
-		FD4E252B200408C9009F5779 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E252A200408C9009F5779 /* ViewController.swift */; };
 		FD4E252E200408C9009F5779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4E252C200408C9009F5779 /* Main.storyboard */; };
 		FD4E2530200408C9009F5779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4E252F200408C9009F5779 /* Assets.xcassets */; };
 		FD4E2533200408C9009F5779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4E2531200408C9009F5779 /* LaunchScreen.storyboard */; };
 		FD4E253E200408C9009F5779 /* AmusementParkPassGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4E253D200408C9009F5779 /* AmusementParkPassGeneratorTests.swift */; };
+		FD62CFD8201FC2940047305C /* sound in Resources */ = {isa = PBXBuildFile; fileRef = FD62CFD7201FC2940047305C /* sound */; };
+		FDC707512016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC707502016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift */; };
+		FDC7075320162450008674F9 /* AreaRestrictedEntrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075220162450008674F9 /* AreaRestrictedEntrantable.swift */; };
+		FDC70755201624B0008674F9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70754201624B0008674F9 /* Identifiable.swift */; };
+		FDC7075720162584008674F9 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075620162584008674F9 /* Vendor.swift */; };
+		FDC70759201626BD008674F9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70758201626BD008674F9 /* Project.swift */; };
+		FDC7075E20163929008674F9 /* ApplicationColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7075D20163929008674F9 /* ApplicationColor.swift */; };
+		FDC707642017D69B008674F9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC707632017D69B008674F9 /* DataProvider.swift */; };
+		FDC70768201A95ED008674F9 /* ValidationErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */; };
+		FDC7076A201BCA78008674F9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70769201BCA78008674F9 /* UITextField.swift */; };
+		FDC7076C201BDAFD008674F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076B201BDAFD008674F9 /* UIButton.swift */; };
+		FDC7076E201C5B59008674F9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076D201C5B59008674F9 /* UITextView.swift */; };
+		FDC70770201C8093008674F9 /* PopulationUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7076F201C8093008674F9 /* PopulationUnarchiver.swift */; };
+		FDC70772201C80A5008674F9 /* PopulationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70771201C80A5008674F9 /* PopulationInfo.swift */; };
+		FDC70774201CCAB0008674F9 /* PersonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70773201CCAB0008674F9 /* PersonBase.swift */; };
+		FDC70776201CCB8A008674F9 /* PopulationInfoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70775201CCB8A008674F9 /* PopulationInfoCollection.swift */; };
+		FDC70778201CE080008674F9 /* population.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDC70777201CE080008674F9 /* population.plist */; };
+		FDC7077A201CE3A6008674F9 /* PassTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC70779201CE3A6008674F9 /* PassTesterViewController.swift */; };
+		FDC7077C201DB8D6008674F9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7077B201DB8D6008674F9 /* UIView.swift */; };
+		FDC7077E201E3025008674F9 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7077D201E3025008674F9 /* UIImageView.swift */; };
+		FDC70780201E5064008674F9 /* CheckpointSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7077F201E5064008674F9 /* CheckpointSimulator.swift */; };
+		FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */; };
+		FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */; };
+		FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC120054F1900AD2B71 /* Accessable.swift */; };
+		FDEDFCC42005513700AD2B71 /* EntrantCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC32005513700AD2B71 /* EntrantCategory.swift */; };
+		FDEDFCC72005539B00AD2B71 /* EntrantSubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC62005539B00AD2B71 /* EntrantSubCategory.swift */; };
+		FDEDFCC9200555CB00AD2B71 /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCC8200555CB00AD2B71 /* Entrant.swift */; };
+		FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCCA200556B600AD2B71 /* RideAccess.swift */; };
+		FDEDFCCD2005572500AD2B71 /* DiscountAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCCC2005572500AD2B71 /* DiscountAccess.swift */; };
+		FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCCF200577BF00AD2B71 /* PListConverter.swift */; };
+		FDEDFCD22005780A00AD2B71 /* PListConverterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */; };
+		FDEDFCD42005784600AD2B71 /* EntrantableUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */; };
+		FDEDFCDA20057D5400AD2B71 /* entrants.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDEDFCD920057D5400AD2B71 /* entrants.plist */; };
+		FDEDFCDD2006AB5A00AD2B71 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCDC2006AB5A00AD2B71 /* Person.swift */; };
+		FDEDFCDF2006ADB400AD2B71 /* Personable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCDE2006ADB400AD2B71 /* Personable.swift */; };
+		FDEDFCE12006ADE100AD2B71 /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCE02006ADE100AD2B71 /* PersonalInfo.swift */; };
+		FDEDFCE32006AE7200AD2B71 /* Descriptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCE22006AE7200AD2B71 /* Descriptable.swift */; };
+		FDEDFCE62006AF2900AD2B71 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCE52006AF2900AD2B71 /* String.swift */; };
+		FDEDFCE92006DE1F00AD2B71 /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCE82006DE1F00AD2B71 /* Pass.swift */; };
+		FDEDFCEB2006DE2C00AD2B71 /* Passable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCEA2006DE2C00AD2B71 /* Passable.swift */; };
+		FDEDFCEE2006E3B400AD2B71 /* Checkpointable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCED2006E3B400AD2B71 /* Checkpointable.swift */; };
+		FDEDFCF02006E3DE00AD2B71 /* AreaCheckpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCEF2006E3DE00AD2B71 /* AreaCheckpoint.swift */; };
+		FDEDFCF22006E5DC00AD2B71 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF12006E5DC00AD2B71 /* Checkpoint.swift */; };
+		FDEDFCF42006E67400AD2B71 /* RideCheckpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF32006E67400AD2B71 /* RideCheckpoint.swift */; };
+		FDEDFCF62006E69700AD2B71 /* DiscountCheckpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF52006E69700AD2B71 /* DiscountCheckpoint.swift */; };
+		FDEDFCF82007F32200AD2B71 /* SwipeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF72007F32200AD2B71 /* SwipeResult.swift */; };
+		FDEDFCFA2009694300AD2B71 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEDFCF92009694300AD2B71 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +76,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD3C932520156D4900E971F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD3C93272015CBF200E971F6 /* vendors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = vendors.plist; sourceTree = "<group>"; };
+		FD3C93282015CBF200E971F6 /* projects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = projects.plist; sourceTree = "<group>"; };
+		FD3C932B2015FF0E00E971F6 /* ManagementTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementTier.swift; sourceTree = "<group>"; };
 		FD4E2525200408C9009F5779 /* AmusementParkPassGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmusementParkPassGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4E2528200408C9009F5779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD4E252A200408C9009F5779 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FD4E252D200408C9009F5779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD4E252F200408C9009F5779 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD4E2532200408C9009F5779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +89,53 @@
 		FD4E2539200408C9009F5779 /* AmusementParkPassGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmusementParkPassGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD4E253D200408C9009F5779 /* AmusementParkPassGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmusementParkPassGeneratorTests.swift; sourceTree = "<group>"; };
 		FD4E253F200408C9009F5779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD62CFD7201FC2940047305C /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
+		FDC707502016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaRestrictedEntrantUnarchiver.swift; sourceTree = "<group>"; };
+		FDC7075220162450008674F9 /* AreaRestrictedEntrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaRestrictedEntrantable.swift; sourceTree = "<group>"; };
+		FDC70754201624B0008674F9 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		FDC7075620162584008674F9 /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
+		FDC70758201626BD008674F9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FDC7075D20163929008674F9 /* ApplicationColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationColor.swift; sourceTree = "<group>"; };
+		FDC707632017D69B008674F9 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorViewController.swift; sourceTree = "<group>"; };
+		FDC70769201BCA78008674F9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		FDC7076B201BDAFD008674F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		FDC7076D201C5B59008674F9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		FDC7076F201C8093008674F9 /* PopulationUnarchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopulationUnarchiver.swift; sourceTree = "<group>"; };
+		FDC70771201C80A5008674F9 /* PopulationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationInfo.swift; sourceTree = "<group>"; };
+		FDC70773201CCAB0008674F9 /* PersonBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBase.swift; sourceTree = "<group>"; };
+		FDC70775201CCB8A008674F9 /* PopulationInfoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationInfoCollection.swift; sourceTree = "<group>"; };
+		FDC70777201CE080008674F9 /* population.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = population.plist; sourceTree = "<group>"; };
+		FDC70779201CE3A6008674F9 /* PassTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTesterViewController.swift; sourceTree = "<group>"; };
+		FDC7077B201DB8D6008674F9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FDC7077D201E3025008674F9 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		FDC7077F201E5064008674F9 /* CheckpointSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointSimulator.swift; sourceTree = "<group>"; };
+		FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrantable.swift; sourceTree = "<group>"; };
+		FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
+		FDEDFCC120054F1900AD2B71 /* Accessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessable.swift; sourceTree = "<group>"; };
+		FDEDFCC32005513700AD2B71 /* EntrantCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantCategory.swift; sourceTree = "<group>"; };
+		FDEDFCC62005539B00AD2B71 /* EntrantSubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubCategory.swift; sourceTree = "<group>"; };
+		FDEDFCC8200555CB00AD2B71 /* Entrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
+		FDEDFCCA200556B600AD2B71 /* RideAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccess.swift; sourceTree = "<group>"; };
+		FDEDFCCC2005572500AD2B71 /* DiscountAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountAccess.swift; sourceTree = "<group>"; };
+		FDEDFCCF200577BF00AD2B71 /* PListConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListConverter.swift; sourceTree = "<group>"; };
+		FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PListConverterError.swift; sourceTree = "<group>"; };
+		FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantableUnarchiver.swift; sourceTree = "<group>"; };
+		FDEDFCD920057D5400AD2B71 /* entrants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entrants.plist; sourceTree = "<group>"; };
+		FDEDFCDC2006AB5A00AD2B71 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		FDEDFCDE2006ADB400AD2B71 /* Personable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personable.swift; sourceTree = "<group>"; };
+		FDEDFCE02006ADE100AD2B71 /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
+		FDEDFCE22006AE7200AD2B71 /* Descriptable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptable.swift; sourceTree = "<group>"; };
+		FDEDFCE52006AF2900AD2B71 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FDEDFCE82006DE1F00AD2B71 /* Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
+		FDEDFCEA2006DE2C00AD2B71 /* Passable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passable.swift; sourceTree = "<group>"; };
+		FDEDFCED2006E3B400AD2B71 /* Checkpointable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpointable.swift; sourceTree = "<group>"; };
+		FDEDFCEF2006E3DE00AD2B71 /* AreaCheckpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCheckpoint.swift; sourceTree = "<group>"; };
+		FDEDFCF12006E5DC00AD2B71 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
+		FDEDFCF32006E67400AD2B71 /* RideCheckpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCheckpoint.swift; sourceTree = "<group>"; };
+		FDEDFCF52006E69700AD2B71 /* DiscountCheckpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCheckpoint.swift; sourceTree = "<group>"; };
+		FDEDFCF72007F32200AD2B71 /* SwipeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeResult.swift; sourceTree = "<group>"; };
+		FDEDFCF92009694300AD2B71 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +177,21 @@
 		FD4E2527200408C9009F5779 /* AmusementParkPassGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				FD62CFD7201FC2940047305C /* sound */,
+				FDEDFCE42006AF1D00AD2B71 /* extensions */,
+				FDEDFCBA20054E3D00AD2B71 /* access */,
+				FDEDFCEC2006E39E00AD2B71 /* check */,
+				FDEDFCCE2005778100AD2B71 /* data */,
+				FDEDFCC52005538700AD2B71 /* entrant */,
+				FDEDFCE72006DDE000AD2B71 /* pass */,
+				FDEDFCDB2006AB4900AD2B71 /* person */,
+				FDC7075A20163668008674F9 /* ui */,
+				FDEDFCE22006AE7200AD2B71 /* Descriptable.swift */,
+				FDC70754201624B0008674F9 /* Identifiable.swift */,
 				FD4E2528200408C9009F5779 /* AppDelegate.swift */,
-				FD4E252A200408C9009F5779 /* ViewController.swift */,
+				FDC70779201CE3A6008674F9 /* PassTesterViewController.swift */,
+				FD3C932520156D4900E971F6 /* ViewController.swift */,
+				FDC70767201A95ED008674F9 /* ValidationErrorViewController.swift */,
 				FD4E252C200408C9009F5779 /* Main.storyboard */,
 				FD4E252F200408C9009F5779 /* Assets.xcassets */,
 				FD4E2531200408C9009F5779 /* LaunchScreen.storyboard */,
@@ -94,6 +207,107 @@
 				FD4E253F200408C9009F5779 /* Info.plist */,
 			);
 			path = AmusementParkPassGeneratorTests;
+			sourceTree = "<group>";
+		};
+		FDC7075A20163668008674F9 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FDC7075D20163929008674F9 /* ApplicationColor.swift */,
+				FDC70769201BCA78008674F9 /* UITextField.swift */,
+				FDC7076B201BDAFD008674F9 /* UIButton.swift */,
+				FDC7076D201C5B59008674F9 /* UITextView.swift */,
+				FDC7077B201DB8D6008674F9 /* UIView.swift */,
+				FDC7077D201E3025008674F9 /* UIImageView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		FDEDFCBA20054E3D00AD2B71 /* access */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDFCBF20054EF400AD2B71 /* AreaAccess.swift */,
+				FDEDFCC120054F1900AD2B71 /* Accessable.swift */,
+				FDEDFCCA200556B600AD2B71 /* RideAccess.swift */,
+				FDEDFCCC2005572500AD2B71 /* DiscountAccess.swift */,
+			);
+			path = access;
+			sourceTree = "<group>";
+		};
+		FDEDFCC52005538700AD2B71 /* entrant */ = {
+			isa = PBXGroup;
+			children = (
+				FDC7075220162450008674F9 /* AreaRestrictedEntrantable.swift */,
+				FDEDFCBD20054ECD00AD2B71 /* Entrantable.swift */,
+				FDEDFCC32005513700AD2B71 /* EntrantCategory.swift */,
+				FDEDFCC62005539B00AD2B71 /* EntrantSubCategory.swift */,
+				FDEDFCC8200555CB00AD2B71 /* Entrant.swift */,
+				FDC7075620162584008674F9 /* Vendor.swift */,
+				FDC70758201626BD008674F9 /* Project.swift */,
+			);
+			path = entrant;
+			sourceTree = "<group>";
+		};
+		FDEDFCCE2005778100AD2B71 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				FDC70777201CE080008674F9 /* population.plist */,
+				FD3C93282015CBF200E971F6 /* projects.plist */,
+				FD3C93272015CBF200E971F6 /* vendors.plist */,
+				FDEDFCD920057D5400AD2B71 /* entrants.plist */,
+				FDEDFCCF200577BF00AD2B71 /* PListConverter.swift */,
+				FDEDFCD12005780A00AD2B71 /* PListConverterError.swift */,
+				FDEDFCD32005784600AD2B71 /* EntrantableUnarchiver.swift */,
+				FDC707502016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift */,
+				FDC7076F201C8093008674F9 /* PopulationUnarchiver.swift */,
+				FDC707632017D69B008674F9 /* DataProvider.swift */,
+				FDC70771201C80A5008674F9 /* PopulationInfo.swift */,
+				FDC70775201CCB8A008674F9 /* PopulationInfoCollection.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		FDEDFCDB2006AB4900AD2B71 /* person */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDFCDC2006AB5A00AD2B71 /* Person.swift */,
+				FDEDFCDE2006ADB400AD2B71 /* Personable.swift */,
+				FDEDFCE02006ADE100AD2B71 /* PersonalInfo.swift */,
+				FD3C932B2015FF0E00E971F6 /* ManagementTier.swift */,
+				FDC70773201CCAB0008674F9 /* PersonBase.swift */,
+			);
+			path = person;
+			sourceTree = "<group>";
+		};
+		FDEDFCE42006AF1D00AD2B71 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDFCE52006AF2900AD2B71 /* String.swift */,
+				FDEDFCF92009694300AD2B71 /* Date.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		FDEDFCE72006DDE000AD2B71 /* pass */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDFCE82006DE1F00AD2B71 /* Pass.swift */,
+				FDEDFCEA2006DE2C00AD2B71 /* Passable.swift */,
+			);
+			path = pass;
+			sourceTree = "<group>";
+		};
+		FDEDFCEC2006E39E00AD2B71 /* check */ = {
+			isa = PBXGroup;
+			children = (
+				FDC7077F201E5064008674F9 /* CheckpointSimulator.swift */,
+				FDEDFCED2006E3B400AD2B71 /* Checkpointable.swift */,
+				FDEDFCEF2006E3DE00AD2B71 /* AreaCheckpoint.swift */,
+				FDEDFCF12006E5DC00AD2B71 /* Checkpoint.swift */,
+				FDEDFCF32006E67400AD2B71 /* RideCheckpoint.swift */,
+				FDEDFCF52006E69700AD2B71 /* DiscountCheckpoint.swift */,
+				FDEDFCF72007F32200AD2B71 /* SwipeResult.swift */,
+			);
+			path = check;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +394,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD4E2533200408C9009F5779 /* LaunchScreen.storyboard in Resources */,
+				FDC70778201CE080008674F9 /* population.plist in Resources */,
+				FD3C93292015CBF200E971F6 /* vendors.plist in Resources */,
 				FD4E2530200408C9009F5779 /* Assets.xcassets in Resources */,
 				FD4E252E200408C9009F5779 /* Main.storyboard in Resources */,
+				FD3C932A2015CBF200E971F6 /* projects.plist in Resources */,
+				FD62CFD8201FC2940047305C /* sound in Resources */,
+				FDEDFCDA20057D5400AD2B71 /* entrants.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,8 +418,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD4E252B200408C9009F5779 /* ViewController.swift in Sources */,
+				FDC70772201C80A5008674F9 /* PopulationInfo.swift in Sources */,
+				FDC707512016243F008674F9 /* AreaRestrictedEntrantUnarchiver.swift in Sources */,
+				FDEDFCF22006E5DC00AD2B71 /* Checkpoint.swift in Sources */,
+				FDEDFCC72005539B00AD2B71 /* EntrantSubCategory.swift in Sources */,
+				FDC70776201CCB8A008674F9 /* PopulationInfoCollection.swift in Sources */,
+				FDEDFCF62006E69700AD2B71 /* DiscountCheckpoint.swift in Sources */,
+				FDEDFCF42006E67400AD2B71 /* RideCheckpoint.swift in Sources */,
 				FD4E2529200408C9009F5779 /* AppDelegate.swift in Sources */,
+				FDEDFCC220054F1900AD2B71 /* Accessable.swift in Sources */,
+				FDEDFCEB2006DE2C00AD2B71 /* Passable.swift in Sources */,
+				FDC70768201A95ED008674F9 /* ValidationErrorViewController.swift in Sources */,
+				FDC70780201E5064008674F9 /* CheckpointSimulator.swift in Sources */,
+				FDEDFCDD2006AB5A00AD2B71 /* Person.swift in Sources */,
+				FDEDFCCB200556B600AD2B71 /* RideAccess.swift in Sources */,
+				FDEDFCD0200577BF00AD2B71 /* PListConverter.swift in Sources */,
+				FDC70774201CCAB0008674F9 /* PersonBase.swift in Sources */,
+				FDEDFCC9200555CB00AD2B71 /* Entrant.swift in Sources */,
+				FDC7076C201BDAFD008674F9 /* UIButton.swift in Sources */,
+				FDC70755201624B0008674F9 /* Identifiable.swift in Sources */,
+				FDEDFCCD2005572500AD2B71 /* DiscountAccess.swift in Sources */,
+				FDC7076E201C5B59008674F9 /* UITextView.swift in Sources */,
+				FDC7077A201CE3A6008674F9 /* PassTesterViewController.swift in Sources */,
+				FDEDFCEE2006E3B400AD2B71 /* Checkpointable.swift in Sources */,
+				FDEDFCDF2006ADB400AD2B71 /* Personable.swift in Sources */,
+				FDC7077E201E3025008674F9 /* UIImageView.swift in Sources */,
+				FDEDFCC020054EF400AD2B71 /* AreaAccess.swift in Sources */,
+				FDC7075720162584008674F9 /* Vendor.swift in Sources */,
+				FDC70770201C8093008674F9 /* PopulationUnarchiver.swift in Sources */,
+				FDEDFCD42005784600AD2B71 /* EntrantableUnarchiver.swift in Sources */,
+				FDEDFCE62006AF2900AD2B71 /* String.swift in Sources */,
+				FD3C932620156D4900E971F6 /* ViewController.swift in Sources */,
+				FDC7077C201DB8D6008674F9 /* UIView.swift in Sources */,
+				FDEDFCC42005513700AD2B71 /* EntrantCategory.swift in Sources */,
+				FD3C932C2015FF0E00E971F6 /* ManagementTier.swift in Sources */,
+				FDEDFCE92006DE1F00AD2B71 /* Pass.swift in Sources */,
+				FDEDFCE12006ADE100AD2B71 /* PersonalInfo.swift in Sources */,
+				FDC7075320162450008674F9 /* AreaRestrictedEntrantable.swift in Sources */,
+				FDEDFCF82007F32200AD2B71 /* SwipeResult.swift in Sources */,
+				FDC7076A201BCA78008674F9 /* UITextField.swift in Sources */,
+				FDEDFCF02006E3DE00AD2B71 /* AreaCheckpoint.swift in Sources */,
+				FDC7075E20163929008674F9 /* ApplicationColor.swift in Sources */,
+				FDEDFCD22005780A00AD2B71 /* PListConverterError.swift in Sources */,
+				FDEDFCE32006AE7200AD2B71 /* Descriptable.swift in Sources */,
+				FDC70759201626BD008674F9 /* Project.swift in Sources */,
+				FDC707642017D69B008674F9 /* DataProvider.swift in Sources */,
+				FDEDFCFA2009694300AD2B71 /* Date.swift in Sources */,
+				FDEDFCBE20054ECD00AD2B71 /* Entrantable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +624,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.prevole.AmusementParkPassGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -375,7 +639,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.prevole.AmusementParkPassGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
